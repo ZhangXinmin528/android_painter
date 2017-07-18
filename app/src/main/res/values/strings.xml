@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">CustomView-Simple</string>
+    <string name="app_tips">点击右上方菜单查看更多！</string>
+    <string name="app_example">示例</string>
+
+    <!--menu-->
+    <string name="menu_canvas">Show Canvas</string>
+    <string name="menu_Paint">Show Paint</string>
+    <string name="menu_Path">Show Path</string>
+
+    <!--canvas-->
+    <string name="canvas_draw">常规绘制</string>
+    <string name="canvas_clip">范围裁切</string>
+    <string name="canvas_matrix">矩阵变换</string>
+</resources>

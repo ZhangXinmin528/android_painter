@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/canvas_draw"
+        android:title="@string/canvas_draw" />
+    <item
+        android:id="@+id/canvas_clip"
+        android:title="@string/canvas_clip" />
+    <item
+        android:id="@+id/canvas_matrix"
+        android:title="@string/canvas_matrix" />
+</menu>
