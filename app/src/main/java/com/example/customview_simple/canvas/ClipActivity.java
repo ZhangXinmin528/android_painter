@@ -11,12 +11,12 @@ import android.view.MenuItem;
 import com.example.customview_simple.R;
 
 /**
- * Created by ZhangXinmin on 2017/7/12.
+ * Created by ZhangXinmin on 2017/7/18.
  * Copyright (c) 2017 . All rights reserved.
- * Canvas讲解界面
+ * 画布裁剪
  */
 
-public class CanvasActivity extends AppCompatActivity {
+public class ClipActivity extends AppCompatActivity {
     private Context mContext;
 
     @Override
@@ -24,32 +24,31 @@ public class CanvasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_canvas);
 
-        initParamsAndValues();
-    }
-
-    private void initParamsAndValues() {
         mContext = this;
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_canvas, menu);
+        getMenuInflater().inflate(R.menu.menu_clip, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.canvas_draw://常规绘制
-                Intent normal = new Intent(mContext, NormalActivity.class);
-                startActivity(normal);
+            case R.id.clip_path:
+                Intent path = new Intent(mContext, ClipDisplayActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("drawType", "clipPath");
+                path.putExtra("bundle", bundle);
+                startActivityForResult(path, 100);
                 break;
-            case R.id.canvas_clip://范围裁切
-                Intent clip = new Intent(mContext, ClipActivity.class);
-                startActivity(clip);
-                break;
-            case R.id.canvas_matrix://矩阵变换
-
+            case R.id.clip_rect:
+                Intent rect = new Intent(mContext, ClipDisplayActivity.class);
+                Bundle b = new Bundle();
+                b.putString("drawType", "clipRect");
+                rect.putExtra("bundle", b);
+                startActivityForResult(rect, 101);
                 break;
         }
         return super.onOptionsItemSelected(item);

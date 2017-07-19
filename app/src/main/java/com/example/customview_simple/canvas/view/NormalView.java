@@ -31,7 +31,6 @@ public class NormalView extends View {
 
     private Context mContext;
     private Resources mResources;
-    private float mDensity;
 
     private Paint mLinePaint;
     private Paint mTextPaint;
@@ -47,7 +46,6 @@ public class NormalView extends View {
 
     private String mDrawType;//绘制类型
     private float mViewWidth;
-    private float mViewHeight;
 
     public NormalView(Context context) {
         this(context, null, 0);
@@ -65,7 +63,6 @@ public class NormalView extends View {
 
     private void initParams() {
         mResources = getResources();
-        mDensity = mResources.getDisplayMetrics().density;
         mLinePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mLinePaint.setStyle(Paint.Style.STROKE);
         mLinePaint.setStrokeWidth(1);
@@ -91,9 +88,16 @@ public class NormalView extends View {
 
 
     @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        int width = MeasureSpec.getSize(widthMeasureSpec);
+        int height = MeasureSpec.getSize(heightMeasureSpec);
+        setMeasuredDimension(width, height);
+        mViewWidth = getMeasuredWidth();
+    }
+
+    @Override
     protected void onDraw(Canvas canvas) {
         if (TextUtils.isEmpty(mDrawType)) return;
-
         switch (mDrawType) {
             case "drawArc":
                 drawArc(canvas);//绘制圆弧
@@ -570,14 +574,6 @@ public class NormalView extends View {
         canvas.drawBitmap(clipBitmap, src, dst, mBitmapPaint);
     }
 
-    @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        int width = MeasureSpec.getSize(widthMeasureSpec);
-        int height = MeasureSpec.getSize(heightMeasureSpec);
-        setMeasuredDimension(width, height);
-        mViewHeight = getMeasuredHeight();
-        mViewWidth = getMeasuredWidth();
-    }
 
     /**
      * 绘制弧

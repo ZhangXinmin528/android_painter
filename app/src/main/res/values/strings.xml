@@ -12,4 +12,8 @@
     <string name="canvas_draw">常规绘制</string>
     <string name="canvas_clip">范围裁切</string>
     <string name="canvas_matrix">矩阵变换</string>
+
+    <!--clip-->
+    <string name="clip_path">clipPath</string>
+    <string name="clip_rect">clipRect</string>
 </resources>
