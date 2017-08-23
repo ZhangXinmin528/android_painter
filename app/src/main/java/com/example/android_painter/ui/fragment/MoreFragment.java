@@ -41,6 +41,11 @@ public class MoreFragment extends BaseFragment {
     }
 
     @Override
+    void initViews(View rootView) {
+
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         TextView view = new TextView(getActivity());
         view.setText("这是更多界面！");
@@ -48,6 +53,11 @@ public class MoreFragment extends BaseFragment {
         view.setTextColor(Color.BLUE);
         Log.i(TAG, "onCreateView");
         return view;
+    }
+
+    @Override
+    protected Object setRootLayout() {
+        return null;
     }
 
     @Override

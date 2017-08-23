@@ -38,6 +38,11 @@ public class HomeFragment extends BaseFragment {
 
     }
 
+    @Override
+    void initViews(View rootView) {
+
+    }
+
     public static HomeFragment newInstance() {
         return new HomeFragment();
     }
@@ -51,6 +56,11 @@ public class HomeFragment extends BaseFragment {
         view.setTextSize(18);
         view.setTextColor(Color.BLUE);
         return view;
+    }
+
+    @Override
+    protected Object setRootLayout() {
+        return null;
     }
 
     @Override

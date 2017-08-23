@@ -38,6 +38,11 @@ public class ApplyFragment extends BaseFragment {
         return view;
     }
 
+    @Override
+    protected Object setRootLayout() {
+        return null;
+    }
+
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -60,6 +65,11 @@ public class ApplyFragment extends BaseFragment {
 
     @Override
     void initParamsAndValues() {
+
+    }
+
+    @Override
+    void initViews(View rootView) {
 
     }
 }
