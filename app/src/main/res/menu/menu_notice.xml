@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.zxm.fragmentdemo.MainActivity">
+    <item
+        android:id="@+id/action_share"
+        android:icon="@drawable/icon_share"
+        android:title="icon_share"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_more"
+        android:icon="@drawable/icon_more"
+        android:title="icon_more"
+        app:showAsAction="ifRoom" />
+</menu>

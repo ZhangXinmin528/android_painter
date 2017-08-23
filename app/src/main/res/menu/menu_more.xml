@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.zxm.fragmentdemo.MainActivity">
+    <item
+        android:id="@+id/action_setting"
+        android:icon="@drawable/icon_setting"
+        android:title="icon_setting"
+        app:showAsAction="ifRoom" />
+</menu>

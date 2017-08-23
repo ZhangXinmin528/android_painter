@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.example.customview_simple.canvas.view.ClipView
+    <com.example.android_painter.view.ClipView
         android:id="@+id/clipview"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

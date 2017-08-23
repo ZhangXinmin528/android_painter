@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.customview_simple">
+    package="com.example.android_painter">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".canvas.CanvasActivity">
+        <activity android:name="com.example.android_painter.ui.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,20 +18,20 @@
         </activity>
         <!--常规绘制-->
         <activity
-            android:name=".canvas.NormalActivity"
+            android:name="com.example.android_painter.ui.NormalActivity"
             android:label="@string/canvas_draw" />
         <!--显示界面-->
         <activity
-            android:name=".canvas.NormalItemActivity"
+            android:name="com.example.android_painter.ui.NormalItemActivity"
             android:hardwareAccelerated="false"
             android:label="@string/canvas_draw" />
         <!--裁剪-->
         <activity
-            android:name=".canvas.ClipActivity"
+            android:name="com.example.android_painter.ui.ClipActivity"
             android:label="@string/canvas_clip" />
         <!--裁剪展示页-->
         <activity
-            android:name=".canvas.ClipDisplayActivity"
+            android:name="com.example.android_painter.ui.ClipDisplayActivity"
             android:label="@string/canvas_clip" />
     </application>
 
