@@ -26,4 +26,6 @@
     <dimen name="draw_space">5dp</dimen>
     <dimen name="draw_radius">80dp</dimen>
 
+    <dimen name="card_height">162dp</dimen>
+
 </resources>

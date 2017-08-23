@@ -15,7 +15,7 @@
             android:id="@+id/rb_home"
             style="@style/BottomNavigationStyle"
             android:checked="true"
-            android:drawableTop="@drawable/home_selector"
+            android:drawableTop="@drawable/selector_home"
             android:text="@string/all_home" />
 
         <!--探索-->
@@ -35,7 +35,7 @@
         <RadioButton
             android:id="@+id/rb_more"
             style="@style/BottomNavigationStyle"
-            android:drawableTop="@drawable/more_selector"
+            android:drawableTop="@drawable/selector_more"
             android:text="@string/all_more" />
     </RadioGroup>
 
