@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.android_painter.ui.HomeActivity">
+        <activity
+            android:name="com.example.android_painter.ui.HomeActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,20 +21,24 @@
         <!--常规绘制-->
         <activity
             android:name="com.example.android_painter.ui.NormalActivity"
-            android:label="@string/canvas_draw" />
+            android:label="@string/canvas_draw"
+            android:screenOrientation="portrait" />
         <!--显示界面-->
         <activity
             android:name="com.example.android_painter.ui.NormalItemActivity"
             android:hardwareAccelerated="false"
-            android:label="@string/canvas_draw" />
+            android:label="@string/canvas_draw"
+            android:screenOrientation="portrait" />
         <!--裁剪-->
         <activity
             android:name="com.example.android_painter.ui.ClipActivity"
-            android:label="@string/canvas_clip" />
+            android:label="@string/canvas_clip"
+            android:screenOrientation="portrait" />
         <!--裁剪展示页-->
         <activity
             android:name="com.example.android_painter.ui.ClipDisplayActivity"
-            android:label="@string/canvas_clip" />
+            android:label="@string/canvas_clip"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
