@@ -1,2 +1,2 @@
-# CustomView-Simple
-This project is the simple which display developer how to use canvas,paint and path and so on.
+# android_painter
+使用Android的新控件，讲解并探索Android中View绘制的相关流程和方法，并附带一些实例。
