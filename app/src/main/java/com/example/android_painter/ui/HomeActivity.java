@@ -1,51 +1,46 @@
 package com.example.android_painter.ui;
 
-import android.content.Context;
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.RadioGroup;
 
 import com.example.android_painter.R;
+import com.example.android_painter.ui.base.BaseActivity;
+import com.example.android_painter.ui.fragment.ApplyFragment;
 import com.example.android_painter.ui.fragment.ExploreFragment;
 import com.example.android_painter.ui.fragment.HomeFragment;
 import com.example.android_painter.ui.fragment.MoreFragment;
-import com.example.android_painter.ui.fragment.ApplyFragment;
 import com.example.android_painter.util.FragmentTag;
 
 
-public class HomeActivity extends AppCompatActivity implements
+public class HomeActivity extends BaseActivity implements
         RadioGroup.OnCheckedChangeListener {
 
-    private Context mContext;
     private FragmentManager mFragmentManager;
     private RadioGroup mRadioGroup;
     private Fragment mHomeFragment, mExploreFragment,
             mApplyFragment, mMoreFragment, mCurrFragment;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        initParamsAndValues();
-
-        initViews();
-
-        switchFragment(FragmentTag.HOME);
-
+    protected Object setLayout() {
+        return R.layout.activity_main;
     }
 
-    private void initParamsAndValues() {
-        mContext = this;
+    @Override
+    protected void initParamsAndViews() {
         mFragmentManager = getSupportFragmentManager();
-
     }
 
-    private void initViews() {
+    @Override
+    protected void initViews() {
         mRadioGroup = (RadioGroup) findViewById(R.id.rg_tab);
         mRadioGroup.setOnCheckedChangeListener(this);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        switchFragment(FragmentTag.HOME);
     }
 
     /**

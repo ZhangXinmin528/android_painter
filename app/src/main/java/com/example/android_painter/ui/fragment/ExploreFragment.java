@@ -1,5 +1,6 @@
 package com.example.android_painter.ui.fragment;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
@@ -15,6 +16,8 @@ import android.widget.Toast;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.android_painter.R;
 import com.example.android_painter.model.ExploreInfo;
+import com.example.android_painter.ui.ClipActivity;
+import com.example.android_painter.ui.NormalActivity;
 import com.example.android_painter.ui.adapter.SimpleQuickAdapter;
 
 import java.util.ArrayList;
@@ -48,7 +51,6 @@ public class ExploreFragment extends BaseFragment implements
     @Override
     void initParamsAndValues() {
         mHandler = new Handler();
-
     }
 
     @Override
@@ -114,5 +116,15 @@ public class ExploreFragment extends BaseFragment implements
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
         Toast.makeText(mContext, " 点击了：" + position, Toast.LENGTH_SHORT).show();
+        switch (position) {
+            case 0:
+                Intent canvas = new Intent(mContext, NormalActivity.class);
+                startActivity(canvas);
+                break;
+            case 1:
+                Intent clip = new Intent(mContext, ClipActivity.class);
+                startActivity(clip);
+                break;
+        }
     }
 }

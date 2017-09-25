@@ -1,5 +1,5 @@
-<resources>
-    <string name="app_name">Android Painter</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">安卓绘制</string>
     <string name="app_tips">点击右上方菜单查看更多！</string>
     <string name="app_example">示例</string>
     <string name="action_settings">Settings</string>
@@ -8,6 +8,7 @@
     <string name="all_explore">探索</string>
     <string name="all_apply">应用</string>
     <string name="all_more">更多</string>
+    <string name="all_none">--</string>
 
     <!--menu-->
     <string name="menu_canvas">Show Canvas</string>
@@ -25,5 +26,41 @@
 
     <!--desc-->
     <string name="desc_common">常规绘制：将会介绍Canvas里的常用绘制方法。如绘制颜色，绘制常规的几何图形等。</string>
-    <string name="desc_clip">常规绘制：将会介绍Canvas里的常用绘制方法。如绘制颜色，绘制常规的几何图形等。</string>
+    <string name="desc_clip">范围裁切：将会介绍Canvas里的常用绘制方法。如绘制颜色，绘制常规的几何图形等。</string>
+
+    <string name="normal_method">方法名：%1$s</string>
+    <string name="normal_method_desc">作用：%1$s</string>
+
+    <string name="drawArc_desc">Draw the special arc.</string>
+    <string name="drawBitmap_desc">Draw the specified bitmap</string>
+    <string name="drawColor_desc">Fill the entire canvas bitmap (restricted to the current clip)
+        with the specified color, using srcover porterduff mode.</string>
+    <string name="drawCircle_desc">Draw the specified circle using the specified paint.</string>
+    <string name="drawLine_desc">Draw a line segment with the specified start and stop x,y coordinates,
+        using the specified paint.</string>
+    <string name="drawBitmapMesh_desc">Draw the bitmap through the mesh, where mesh vertices are evenly
+        distributed across the bitmap.</string>
+    <string name="drawOval_desc">Draw the specified oval using the specified paint.</string>
+    <string name="drawPath_desc">Draw the specified path using the specified paint.</string>
+    <string name="drawPoint_desc">Helper for drawPoints() for drawing a single point.</string>
+    <string name="drawPaint_desc">Fill the entire canvas bitmap (restricted to the current clip) with
+        the specified paint.</string>
+    <string name="drawPoints_desc">Helper for drawPoints() that assumes you want to draw the entire array</string>
+    <string name="drawRect_desc">Draw the specified Rect using the specified paint.</string>
+    <string name="drawRGB_desc">Fill the entire canvas bitmap (restricted to the current clip) with the
+        specified RGB color, using srcover porterduff mode.</string>
+    <string name="drawRoundRect_desc">Draw the specified round-rect using the specified paint.</string>
+    <string name="drawText_desc">Preconcat the current matrix with the specified translation</string>
+    <string name="drawTextOnPath_desc">Draw the text, with origin at (x,y), using the specified paint,
+        along the specified path.</string>
+    <string name="drawTextRun_desc">Draw a run of text, all in a single direction, with optional
+        context for complex text shaping.</string>
+    <string name="drawVertices_desc"></string>
+
+    <!--splash-->
+    <string name="count_tips">跳过 %1$ss</string>
+    <string name="splash_pic_tips">遇见最好的自己！</string>
+    <string name="splash_pic_time" tools:ignore="TypographyDashes">2017/09/24</string>
+    <string name="splash_change">换一换</string>
+
 </resources>

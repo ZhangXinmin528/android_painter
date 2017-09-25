@@ -5,7 +5,7 @@ android {
     buildToolsVersion "26.0.0"
     defaultConfig {
         applicationId "com.example.customview_simple"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -31,4 +31,16 @@ dependencies {
     compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
     //RecyclerView
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.22'
+    //logger
+    compile 'com.orhanobut:logger:2.1.1'
+    //网络请求
+    compile 'com.lzy.net:okgo:3.0.4'
+    //图片加载框架
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    //Gson
+    compile 'com.google.code.gson:gson:2.8.1'
+    compile 'com.readystatesoftware.chuck:library:1.1.0'
+    //fastjson
+    compile 'com.alibaba:fastjson:1.2.38'
+
 }

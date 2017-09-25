@@ -17,4 +17,5 @@
     <color name="color_rb_selected">#2196F3</color>
     <color name="color_rb">#636363</color>
     <color name="color_bg">#ebedef</color>
+    <color name="color_count_bg">#7dbababa</color>
 </resources>

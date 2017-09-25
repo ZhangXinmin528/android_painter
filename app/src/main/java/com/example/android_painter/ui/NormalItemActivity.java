@@ -7,8 +7,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.android_painter.R;
+import com.example.android_painter.model.MethodInfo;
 import com.example.android_painter.view.NormalView;
-import com.example.android_painter.model.ItemInfo;
 
 /**
  * Created by ZhangXinmin on 2017/7/13.
@@ -17,7 +17,7 @@ import com.example.android_painter.model.ItemInfo;
 
 public class NormalItemActivity extends AppCompatActivity {
     private Context mContext;
-    private ItemInfo mInfo;
+    private MethodInfo mInfo;
     private NormalView mNormalView;
 
     @Override
@@ -32,7 +32,7 @@ public class NormalItemActivity extends AppCompatActivity {
 
     private void initViews() {
         mNormalView = (NormalView) findViewById(R.id.normalview);
-        mNormalView.setmDrawType(mInfo.getName());
+        mNormalView.setmDrawType(mInfo.getModel());
     }
 
     private void initParamsAndValues() {
@@ -43,7 +43,7 @@ public class NormalItemActivity extends AppCompatActivity {
             Bundle bundle = intent.getBundleExtra("bundle");
             if (bundle != null) {
                 if (bundle.getSerializable("item") != null) {
-                    mInfo = (ItemInfo) bundle.getSerializable("item");
+                    mInfo = (MethodInfo) bundle.getSerializable("item");
                 }
             }
         }

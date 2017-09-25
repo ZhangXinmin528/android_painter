@@ -1,6 +1,5 @@
 package com.example.android_painter.ui.fragment;
 
-import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -23,15 +22,7 @@ import com.example.android_painter.R;
 
 public class HomeFragment extends BaseFragment {
     public static final String TAG = HomeFragment.class.getName();
-    private Context mContext;
 
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        mContext = context;
-        Log.i(TAG, "onAttach");
-    }
 
     @Override
     void initParamsAndValues() {
@@ -50,7 +41,6 @@ public class HomeFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Log.i(TAG, "onCreateView");
         TextView view = new TextView(getActivity());
         view.setText("这是首页！");
         view.setTextSize(18);
