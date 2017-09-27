@@ -66,7 +66,7 @@ public class ExploreFragment extends BaseFragment implements
 
         mSwipeRefreshLayout = rootView.findViewById(R.id.swipe_layout);
         //设置颜色
-        mSwipeRefreshLayout.setColorSchemeResources(R.color.colorLightBlue, R.color.colorCycn,
+        mSwipeRefreshLayout.setColorSchemeResources(R.color.colorLightBlue, R.color.colorCyan,
                 R.color.colorPurple);
         mSwipeRefreshLayout.setOnRefreshListener(this);
         mRecyclerView = rootView.findViewById(R.id.recyclerview_explore);

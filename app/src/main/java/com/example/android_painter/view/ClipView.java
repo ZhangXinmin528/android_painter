@@ -58,7 +58,7 @@ public class ClipView extends View {
         mLinePaint.setStyle(Paint.Style.STROKE);
         mLinePaint.setStrokeWidth(1);
 
-        mTextSize = mResources.getDimensionPixelSize(R.dimen.textSize_14sp);
+        mTextSize = mResources.getDimensionPixelSize(R.dimen.textsize_14sp);
         mTextPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mTextPaint.setColor(Color.BLACK);
         mTextPaint.setTextSize(mTextSize);

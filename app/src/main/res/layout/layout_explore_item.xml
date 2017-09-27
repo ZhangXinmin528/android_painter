@@ -32,7 +32,7 @@
             android:layout_marginLeft="@dimen/margin_12dp"
             android:layout_toRightOf="@+id/iv_pic"
             android:textColor="@android:color/black"
-            android:textSize="@dimen/textSize_18sp"
+            android:textSize="@dimen/textsize_18sp"
             android:textStyle="bold"
             tools:text="Title" />
 

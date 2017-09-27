@@ -4,13 +4,16 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="colorGray">#C9C9C9</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorCyan">#00FFFF</color>
+    <color name="colorYellow">#FFD800</color>
+    <color name="colorPurple">#B400FF</color>
+    <color name="colorPink">#FF6FA1</color>
     <color name="colorRed">#FF0000</color>
-    <color name="colorGreen">#00FF00</color>
     <color name="colorBlue">#0000FF</color>
-    <color name="colorCycn">#00fcf3</color>
-    <color name="colorYellow">#fcf800</color>
-    <color name="colorPurple">#f400fc</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorGray">#989898</color>
+    <color name="colorOrange">#FF9501</color>
     <color name="colorLightBlue">#0069fc</color>
     <color name="colorLightGray">#eceaea</color>
 
@@ -18,4 +21,11 @@
     <color name="color_rb">#636363</color>
     <color name="color_bg">#ebedef</color>
     <color name="color_count_bg">#7dbababa</color>
+
+    <!--大盘:柱状图-->
+    <color name="market_his_leve1">#a0a0a0</color>
+    <color name="market_his_leve2">#b8b8b8</color>
+    <color name="market_his_leve3">#d0d0d0</color>
+    <color name="market_his_leve4">#e7e7e7</color>
+    <color name="market_his_leve5">#ffffff</color>
 </resources>

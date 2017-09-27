@@ -20,7 +20,7 @@
         android:padding="@dimen/padding_20dp"
         android:text="@string/splash_change"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/textSize_16sp" />
+        android:textSize="@dimen/textsize_16sp" />
 
     <TextView
         android:id="@+id/tv_splash_count"

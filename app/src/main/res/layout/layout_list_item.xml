@@ -10,5 +10,5 @@
         android:gravity="left|center_vertical"
         android:padding="@dimen/padding_8dp"
         android:text="@string/app_name"
-        android:textSize="@dimen/textSize_16sp" />
+        android:textSize="@dimen/textsize_16sp" />
 </LinearLayout>

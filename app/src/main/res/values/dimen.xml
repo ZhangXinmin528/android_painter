@@ -15,11 +15,16 @@
     <dimen name="margin_20dp">20dp</dimen>
 
     <!--text-->
-    <dimen name="textSize_12sp">12sp</dimen>
-    <dimen name="textSize_14sp">14sp</dimen>
-    <dimen name="textSize_16sp">16sp</dimen>
-    <dimen name="textSize_18sp">18sp</dimen>
-    <dimen name="textSize_20sp">20sp</dimen>
+    <!--textsize-->
+    <dimen name="textsize_10sp">10sp</dimen>
+    <dimen name="textsize_12sp">12sp</dimen>
+    <dimen name="textsize_14sp">14sp</dimen>
+    <dimen name="textsize_16sp">16sp</dimen>
+    <dimen name="textsize_18sp">18sp</dimen>
+    <dimen name="textsize_20sp">20sp</dimen>
+    <dimen name="textsize_22sp">22sp</dimen>
+    <dimen name="textsize_25sp">25sp</dimen>
+    <dimen name="textsize_30sp">30sp</dimen>
 
     <!--pading-->
     <dimen name="draw_padding">20dp</dimen>
