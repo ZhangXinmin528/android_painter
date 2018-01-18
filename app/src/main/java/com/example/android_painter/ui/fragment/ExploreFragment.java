@@ -56,12 +56,15 @@ public class ExploreFragment extends BaseFragment implements
     @Override
     void initViews(View rootView) {
         //init actionbar
+        setHasOptionsMenu(true);
         AppCompatActivity activity = (AppCompatActivity) getActivity();
-        ActionBar actionBar = activity.getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setTitle(R.string.all_explore);
-            actionBar.setDisplayHomeAsUpEnabled(false);
-            actionBar.setDisplayShowHomeEnabled(true);
+        if (activity!=null){
+            ActionBar actionBar = activity.getSupportActionBar();
+            if (actionBar != null) {
+                actionBar.setTitle(R.string.all_explore);
+                actionBar.setDisplayHomeAsUpEnabled(false);
+                actionBar.setDisplayShowHomeEnabled(true);
+            }
         }
 
         mSwipeRefreshLayout = rootView.findViewById(R.id.swipe_layout);
@@ -76,24 +79,6 @@ public class ExploreFragment extends BaseFragment implements
         mRecyclerView.setAdapter(mSimpleQuickAdapter);
         mSimpleQuickAdapter.setOnItemClickListener(this);//点击事件
         mSimpleQuickAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_LEFT);
-    }
-
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        menu.clear();
-        inflater.inflate(R.menu.menu_find, menu);
-        super.onCreateOptionsMenu(menu, inflater);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_search:
-
-                break;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     //TODO:生成测试数据

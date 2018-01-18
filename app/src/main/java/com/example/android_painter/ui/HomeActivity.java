@@ -11,6 +11,7 @@ import com.example.android_painter.ui.fragment.ExploreFragment;
 import com.example.android_painter.ui.fragment.HomeFragment;
 import com.example.android_painter.ui.fragment.MoreFragment;
 import com.example.android_painter.util.FragmentTag;
+import com.example.android_painter.util.LogUtil;
 
 
 public class HomeActivity extends BaseActivity implements
@@ -112,6 +113,7 @@ public class HomeActivity extends BaseActivity implements
     /**
      * 切换RadioGroup:实现界面的切换
      */
+    @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         switch (checkedId) {
             case R.id.rb_home://首页
@@ -129,5 +131,11 @@ public class HomeActivity extends BaseActivity implements
             default:
                 break;
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        LogUtil.logIWithTime("主页：onDestroy");
+        super.onDestroy();
     }
 }

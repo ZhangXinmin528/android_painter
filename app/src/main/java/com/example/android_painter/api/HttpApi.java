@@ -12,8 +12,7 @@ public final class HttpApi {
     }
 
     /**
-     * 启动页API
+     * 新闻资讯
      */
-    public static final String SPLASH_API = "https://easy-mock.com/mock/59c74a6de0dc663341b6eeca/" +
-            "android_painter/splash_api#!method=get";
+    public static final String NEWS_API = "http://gank.io/api/data/";
 }

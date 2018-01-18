@@ -22,4 +22,9 @@
         <item name="android:paddingBottom">2dp</item>
     </style>
 
+    <!--导航栏文字样式-->
+    <style name="TabLayoutTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+    </style>
+
 </resources>

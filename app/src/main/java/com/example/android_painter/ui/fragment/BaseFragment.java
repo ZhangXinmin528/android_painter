@@ -27,7 +27,6 @@ public abstract class BaseFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setHasOptionsMenu(true);
 
         initParamsAndValues();
 
@@ -68,4 +67,5 @@ public abstract class BaseFragment extends Fragment {
      * @param rootView
      */
     abstract void initViews(View rootView);
+
 }

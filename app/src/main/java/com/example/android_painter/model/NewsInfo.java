@@ -15,7 +15,7 @@ public class NewsInfo implements Serializable {
     private String createdAt;
     private String desc;
     private List<String> images;
-    private Date publishedAt;
+    private String publishedAt;
     private String source;
     private String type;
     private String url;
@@ -57,11 +57,11 @@ public class NewsInfo implements Serializable {
         this.images = images;
     }
 
-    public Date getPublishedAt() {
+    public String getPublishedAt() {
         return publishedAt;
     }
 
-    public void setPublishedAt(Date publishedAt) {
+    public void setPublishedAt(String publishedAt) {
         this.publishedAt = publishedAt;
     }
 

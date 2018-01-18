@@ -9,6 +9,7 @@
     <string name="all_apply">应用</string>
     <string name="all_more">更多</string>
     <string name="all_none">--</string>
+    <string name="all_news_title">%1$s资讯</string>
 
     <!--menu-->
     <string name="menu_canvas">Show Canvas</string>
@@ -57,10 +58,15 @@
         context for complex text shaping.</string>
     <string name="drawVertices_desc"></string>
 
-    <!--splash-->
-    <string name="count_tips">跳过 %1$ss</string>
-    <string name="splash_pic_tips">遇见最好的自己！</string>
-    <string name="splash_pic_time" tools:ignore="TypographyDashes">2017/09/24</string>
+    <!--启动页-->
+    <string name="count_tips">跳过</string>
     <string name="splash_change">换一换</string>
+    <string name="market_riskindex">估值风险指数</string>
+
+    <!--资讯-->
+    <string name="news_type">类型：%1$s</string>
+    <string name="news_publish_time">发布日期：%1$s</string>
+    <string name="news_linked">链接：</string>
+    <string name="news_author">作者：%1$s</string>
 
 </resources>
