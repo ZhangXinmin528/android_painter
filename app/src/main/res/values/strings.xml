@@ -9,7 +9,7 @@
     <string name="all_apply">应用</string>
     <string name="all_more">更多</string>
     <string name="all_none">--</string>
-    <string name="all_news_title">%1$s资讯</string>
+    <string name="all_news_title">开发资讯</string>
 
     <!--menu-->
     <string name="menu_canvas">Show Canvas</string>

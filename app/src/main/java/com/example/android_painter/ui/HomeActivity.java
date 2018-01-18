@@ -34,14 +34,16 @@ public class HomeActivity extends BaseActivity implements
 
     @Override
     protected void initViews() {
+//        LogUtil.logIWithTime("主页-->initViews:" + mFragmentManager);
         mRadioGroup = (RadioGroup) findViewById(R.id.rg_tab);
         mRadioGroup.setOnCheckedChangeListener(this);
+        switchFragment(FragmentTag.HOME);
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
-        switchFragment(FragmentTag.HOME);
+    protected void onResume() {
+        LogUtil.logIWithTime("主页-->onResume:" + mCurrFragment.getClass().getSimpleName());
+        super.onResume();
     }
 
     /**
@@ -131,11 +133,5 @@ public class HomeActivity extends BaseActivity implements
             default:
                 break;
         }
-    }
-
-    @Override
-    protected void onDestroy() {
-        LogUtil.logIWithTime("主页：onDestroy");
-        super.onDestroy();
     }
 }

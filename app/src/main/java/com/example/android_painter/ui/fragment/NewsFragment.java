@@ -1,5 +1,6 @@
 package com.example.android_painter.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -14,11 +15,13 @@ import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.android_painter.R;
 import com.example.android_painter.api.HttpApi;
 import com.example.android_painter.model.NewsInfo;
 import com.example.android_painter.model.TabInfo;
 import com.example.android_painter.ui.adapter.NewsRecyclerAdapter;
+import com.example.android_painter.ui.web.WebActivity;
 import com.example.android_painter.util.LogUtil;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
@@ -29,8 +32,11 @@ import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.example.android_painter.ui.web.WebActivity.PARAMS_URL;
 
 /**
  * Created by Administrator on 2018/1/17.
@@ -38,7 +44,8 @@ import java.util.List;
  * 新闻列表
  */
 
-public class NewsFragment extends BaseFragment implements OnRefreshListener, OnLoadmoreListener {
+public class NewsFragment extends BaseFragment implements OnRefreshListener, OnLoadmoreListener
+        , BaseQuickAdapter.OnItemClickListener {
 
     private static final String TAG = NewsFragment.class.getSimpleName();
 
@@ -87,7 +94,6 @@ public class NewsFragment extends BaseFragment implements OnRefreshListener, OnL
 
     @Override
     void initViews(View rootView) {
-        LogUtil.logIWithTime(TAG + "：initViews");
         mRefreshLayout = rootView.findViewById(R.id.srLayout_news);
         mRefreshLayout.setEnableHeaderTranslationContent(false);//刷新时内容不偏移
         MaterialHeader materialHeader = (MaterialHeader) mRefreshLayout.getRefreshHeader();
@@ -104,6 +110,7 @@ public class NewsFragment extends BaseFragment implements OnRefreshListener, OnL
         mRecyclerView = rootView.findViewById(R.id.recyclerview_news);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
         mRecyclerView.setAdapter(mAdapter);
+        mAdapter.setOnItemClickListener(this);
     }
 
     /**
@@ -189,9 +196,13 @@ public class NewsFragment extends BaseFragment implements OnRefreshListener, OnL
     }
 
     @Override
-    public void onDestroyView() {
-        LogUtil.logIWithTime(TAG + "：onDestroyView");
-        super.onDestroyView();
+    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+        Toast.makeText(mContext, "点击了：" + position, Toast.LENGTH_SHORT).show();
+        NewsInfo info = (NewsInfo) adapter.getData().get(position);
+        if (info != null) {
+            Intent web = new Intent(mContext, WebActivity.class);
+            web.putExtra(PARAMS_URL, info.getUrl());
+            startActivity(web);
+        }
     }
-
 }

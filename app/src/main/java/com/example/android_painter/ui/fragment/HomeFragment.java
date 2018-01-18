@@ -33,7 +33,7 @@ import java.util.List;
  */
 
 public class HomeFragment extends BaseFragment {
-    public static final String TAG = HomeFragment.class.getName();
+    public static final String TAG = HomeFragment.class.getSimpleName();
 
     private NewsTabAdapter mNewsTabAdapter;
 
@@ -56,24 +56,23 @@ public class HomeFragment extends BaseFragment {
         tabList.add(new TabInfo("拓展资源", "开发杂谈"));
 
         FragmentManager manager = getChildFragmentManager();
+//        LogUtil.logIWithTime(TAG+"-->initParamsAndValues:" + manager);
         mNewsTabAdapter = new NewsTabAdapter(manager, tabList);
     }
 
     @Override
     void initViews(View rootView) {
-        LogUtil.logIWithTime(TAG + "：initViews");
         Toolbar toolbar = rootView.findViewById(R.id.toolbar_home);
         toolbar.setTitle(R.string.all_home);
         ViewPager viewPager = rootView.findViewById(R.id.viewpager_home);
         viewPager.setAdapter(mNewsTabAdapter);
         TabLayout tabLayout = rootView.findViewById(R.id.tablayout_home);
         tabLayout.setupWithViewPager(viewPager);
-
+        viewPager.setOffscreenPageLimit(2);
     }
 
     @Override
     public void onDestroyView() {
-        LogUtil.logIWithTime(TAG + "：onDestroyView");
         super.onDestroyView();
     }
 }
