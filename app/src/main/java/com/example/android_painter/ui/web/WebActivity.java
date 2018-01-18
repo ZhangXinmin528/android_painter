@@ -7,6 +7,8 @@ import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.WindowManager;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
@@ -19,6 +21,7 @@ import android.widget.ProgressBar;
 
 import com.example.android_painter.R;
 import com.example.android_painter.ui.base.BaseActivity;
+import com.example.android_painter.util.LogUtil;
 import com.tencent.sonic.sdk.SonicConfig;
 import com.tencent.sonic.sdk.SonicEngine;
 import com.tencent.sonic.sdk.SonicSession;
@@ -34,6 +37,8 @@ import static android.view.View.VISIBLE;
  */
 
 public class WebActivity extends BaseActivity {
+    private static final String TAG = WebActivity.class.getSimpleName();
+
     public static final String PARAMS_URL = "url";
 
     private SonicSession mSession;
@@ -67,14 +72,14 @@ public class WebActivity extends BaseActivity {
             SonicEngine.createInstance(new SonicRuntimeImpl(getApplication()), new SonicConfig.Builder().build());
         }
 
-
         mSession = SonicEngine.getInstance().createSession(mUrl, new SonicSessionConfig.Builder().build());
         if (null != mSession) {
             mSession.bindClient(mSessionClient = new SonicSessionClientImpl());
         } else {
             // this only happen when a same sonic session is already running,
             // u can comment following codes to feedback as a default mode.
-            throw new UnknownError("create session fail!");
+            LogUtil.logE(TAG + ":create session fail");
+            finish();
         }
     }
 
@@ -164,8 +169,13 @@ public class WebActivity extends BaseActivity {
     };
 
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

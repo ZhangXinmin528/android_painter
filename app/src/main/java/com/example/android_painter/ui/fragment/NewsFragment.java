@@ -197,7 +197,6 @@ public class NewsFragment extends BaseFragment implements OnRefreshListener, OnL
 
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-        Toast.makeText(mContext, "点击了：" + position, Toast.LENGTH_SHORT).show();
         NewsInfo info = (NewsInfo) adapter.getData().get(position);
         if (info != null) {
             Intent web = new Intent(mContext, WebActivity.class);

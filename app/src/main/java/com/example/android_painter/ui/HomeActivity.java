@@ -40,12 +40,6 @@ public class HomeActivity extends BaseActivity implements
         switchFragment(FragmentTag.HOME);
     }
 
-    @Override
-    protected void onResume() {
-        LogUtil.logIWithTime("主页-->onResume:" + mCurrFragment.getClass().getSimpleName());
-        super.onResume();
-    }
-
     /**
      * 切换Fragment
      *

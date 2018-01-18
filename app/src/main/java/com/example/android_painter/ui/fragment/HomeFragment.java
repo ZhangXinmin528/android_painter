@@ -56,7 +56,6 @@ public class HomeFragment extends BaseFragment {
         tabList.add(new TabInfo("拓展资源", "开发杂谈"));
 
         FragmentManager manager = getChildFragmentManager();
-//        LogUtil.logIWithTime(TAG+"-->initParamsAndValues:" + manager);
         mNewsTabAdapter = new NewsTabAdapter(manager, tabList);
     }
 
