@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.example.android_painter.http.OkHttp;
 import com.example.android_painter.util.LogUtil;
+import com.tencent.bugly.crashreport.CrashReport;
 
 /**
  * Created by ZhangXinmin on 2017/9/17.
@@ -17,6 +18,9 @@ public class PainterApplication extends Application {
 
         //init okgo
         OkHttp.init(this, "painter");
+
+        //init Bugly:建议在测试阶段建议设置成true，发布时设置为false
+        CrashReport.initCrashReport(getApplicationContext(), "211fc19956", true);
 
     }
 
