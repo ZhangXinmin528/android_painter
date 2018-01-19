@@ -18,6 +18,7 @@ import android.webkit.WebViewClient;
 import android.widget.AbsoluteLayout;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.example.android_painter.R;
 import com.example.android_painter.ui.base.BaseActivity;
@@ -78,8 +79,8 @@ public class WebActivity extends BaseActivity {
         } else {
             // this only happen when a same sonic session is already running,
             // u can comment following codes to feedback as a default mode.
+            Toast.makeText(mContext, "create sonic session fail", Toast.LENGTH_LONG).show();
             LogUtil.logE(TAG + ":create session fail");
-            finish();
         }
     }
 
