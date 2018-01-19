@@ -15,9 +15,9 @@ import java.util.List;
  * 探索页面适配器
  */
 
-public class SimpleQuickAdapter extends BaseQuickAdapter<ExploreInfo, BaseViewHolder> {
+public class ExploreRecyclerAdapter extends BaseQuickAdapter<ExploreInfo, BaseViewHolder> {
 
-    public SimpleQuickAdapter(@Nullable List<ExploreInfo> data) {
+    public ExploreRecyclerAdapter(@Nullable List<ExploreInfo> data) {
         super(R.layout.layout_explore_item, data);
     }
 

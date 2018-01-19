@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -23,7 +24,7 @@ import java.util.List;
  * 常规绘制
  */
 
-public class NormalActivity extends AppCompatActivity implements BaseQuickAdapter.OnItemClickListener {
+public class NormalDrawActivity extends AppCompatActivity implements BaseQuickAdapter.OnItemClickListener {
     private Context mContext;
     private RecyclerView mRecyclerView;
     private NormalQuickAdapter mNormalQuickAdapter;
@@ -66,6 +67,16 @@ public class NormalActivity extends AppCompatActivity implements BaseQuickAdapte
         bundle.putSerializable("item", info);
         intent.putExtra("bundle", bundle);
         startActivityForResult(intent, 100);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+        }
+        return super.onContextItemSelected(item);
     }
 
     //TODO:测试数据

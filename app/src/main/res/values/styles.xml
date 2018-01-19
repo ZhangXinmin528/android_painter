@@ -27,4 +27,6 @@
         <item name="textAllCaps">false</item>
     </style>
 
+    <style name="AppTheme.AppBarOverlay.ToolBar" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
 </resources>

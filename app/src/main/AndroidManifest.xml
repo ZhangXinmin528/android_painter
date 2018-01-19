@@ -44,7 +44,7 @@
 
         <!--常规绘制-->
         <activity
-            android:name="com.example.android_painter.ui.NormalActivity"
+            android:name="com.example.android_painter.ui.NormalDrawActivity"
             android:screenOrientation="portrait" />
         <!--显示界面-->
         <activity

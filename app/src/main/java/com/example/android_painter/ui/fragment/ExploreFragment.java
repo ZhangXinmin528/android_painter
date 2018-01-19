@@ -1,15 +1,8 @@
 package com.example.android_painter.ui.fragment;
 
 import android.content.Intent;
-import android.os.Handler;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -17,8 +10,8 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.android_painter.R;
 import com.example.android_painter.model.ExploreInfo;
 import com.example.android_painter.ui.ClipActivity;
-import com.example.android_painter.ui.NormalActivity;
-import com.example.android_painter.ui.adapter.SimpleQuickAdapter;
+import com.example.android_painter.ui.NormalDrawActivity;
+import com.example.android_painter.ui.adapter.ExploreRecyclerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,15 +22,12 @@ import java.util.List;
  * 探索界面
  */
 
-public class ExploreFragment extends BaseFragment implements
-        SwipeRefreshLayout.OnRefreshListener, BaseQuickAdapter.OnItemClickListener {
+public class ExploreFragment extends BaseFragment implements BaseQuickAdapter.OnItemClickListener {
 
     private static final String TAG = ExploreFragment.class.getSimpleName();
 
-    private SwipeRefreshLayout mSwipeRefreshLayout;
     private RecyclerView mRecyclerView;
-    private SimpleQuickAdapter mSimpleQuickAdapter;
-    private Handler mHandler;
+    private ExploreRecyclerAdapter mExploreRecyclerAdapter;
 
     public static ExploreFragment newInstance() {
         return new ExploreFragment();
@@ -50,35 +40,18 @@ public class ExploreFragment extends BaseFragment implements
 
     @Override
     void initParamsAndValues() {
-        mHandler = new Handler();
     }
 
     @Override
     void initViews(View rootView) {
-        //init actionbar
-        setHasOptionsMenu(true);
-        AppCompatActivity activity = (AppCompatActivity) getActivity();
-        if (activity!=null){
-            ActionBar actionBar = activity.getSupportActionBar();
-            if (actionBar != null) {
-                actionBar.setTitle(R.string.all_explore);
-                actionBar.setDisplayHomeAsUpEnabled(false);
-                actionBar.setDisplayShowHomeEnabled(true);
-            }
-        }
 
-        mSwipeRefreshLayout = rootView.findViewById(R.id.swipe_layout);
-        //设置颜色
-        mSwipeRefreshLayout.setColorSchemeResources(R.color.colorLightBlue, R.color.colorCyan,
-                R.color.colorPurple);
-        mSwipeRefreshLayout.setOnRefreshListener(this);
         mRecyclerView = rootView.findViewById(R.id.recyclerview_explore);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
         //init adapter
-        mSimpleQuickAdapter = new SimpleQuickAdapter(initExploreData());
-        mRecyclerView.setAdapter(mSimpleQuickAdapter);
-        mSimpleQuickAdapter.setOnItemClickListener(this);//点击事件
-        mSimpleQuickAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_LEFT);
+        mExploreRecyclerAdapter = new ExploreRecyclerAdapter(initExploreData());
+        mRecyclerView.setAdapter(mExploreRecyclerAdapter);
+        mExploreRecyclerAdapter.setOnItemClickListener(this);//点击事件
+        mExploreRecyclerAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_LEFT);
     }
 
     //TODO:生成测试数据
@@ -94,16 +67,11 @@ public class ExploreFragment extends BaseFragment implements
     }
 
     @Override
-    public void onRefresh() {
-
-    }
-
-    @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
         Toast.makeText(mContext, " 点击了：" + position, Toast.LENGTH_SHORT).show();
         switch (position) {
             case 0:
-                Intent canvas = new Intent(mContext, NormalActivity.class);
+                Intent canvas = new Intent(mContext, NormalDrawActivity.class);
                 startActivity(canvas);
                 break;
             case 1:
@@ -112,4 +80,5 @@ public class ExploreFragment extends BaseFragment implements
                 break;
         }
     }
+
 }

@@ -5,9 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 
 import com.example.android_painter.R;
 import com.example.android_painter.model.MethodInfo;
+import com.example.android_painter.ui.base.BaseActivity;
 import com.example.android_painter.view.NormalView;
 
 /**
@@ -15,28 +18,17 @@ import com.example.android_painter.view.NormalView;
  * Copyright (c) 2017 . All rights reserved.
  */
 
-public class NormalItemActivity extends AppCompatActivity {
-    private Context mContext;
+public class NormalItemActivity extends BaseActivity {
     private MethodInfo mInfo;
     private NormalView mNormalView;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_normal_item);
-
-        initParamsAndValues();
-
-        initViews();
+    protected Object setLayout() {
+        return R.layout.activity_normal_item;
     }
 
-    private void initViews() {
-        mNormalView = (NormalView) findViewById(R.id.normalview);
-        mNormalView.setmDrawType(mInfo.getModel());
-    }
-
-    private void initParamsAndValues() {
-        mContext = this;
+    @Override
+    protected void initParamsAndViews() {
 
         Intent intent = getIntent();
         if (intent != null) {
@@ -47,5 +39,26 @@ public class NormalItemActivity extends AppCompatActivity {
                 }
             }
         }
+
+    }
+
+    @Override
+    protected void initViews() {
+        Toolbar toolbar = findViewById(R.id.toolbar_normal_item);
+        if (mInfo != null) {
+            toolbar.setTitle(mInfo.getName());
+        }
+        mNormalView = (NormalView) findViewById(R.id.normalview);
+        mNormalView.setmDrawType(mInfo.getModel());
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+        }
+        return super.onContextItemSelected(item);
     }
 }
