@@ -18,6 +18,7 @@ import com.orhanobut.logger.Logger;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
+
     protected Context mContext;
     protected Resources mResources;
 
@@ -43,6 +44,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             throw new RuntimeException("You must use the method of 'setLayout()' " +
                     "to bind view for activity! ");
         }
+
 
         initViews();
 

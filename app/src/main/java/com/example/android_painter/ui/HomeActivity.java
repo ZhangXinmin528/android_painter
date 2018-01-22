@@ -11,7 +11,7 @@ import com.example.android_painter.ui.fragment.ExploreFragment;
 import com.example.android_painter.ui.fragment.HomeFragment;
 import com.example.android_painter.ui.fragment.MoreFragment;
 import com.example.android_painter.util.FragmentTag;
-import com.example.android_painter.util.LogUtil;
+import com.example.android_painter.util.StatusBarCompat;
 
 
 public class HomeActivity extends BaseActivity implements
@@ -34,7 +34,8 @@ public class HomeActivity extends BaseActivity implements
 
     @Override
     protected void initViews() {
-//        LogUtil.logIWithTime("主页-->initViews:" + mFragmentManager);
+        //设置状态栏
+        StatusBarCompat.setColor(this, getResources().getColor(R.color.colorPrimaryDark));
         mRadioGroup = (RadioGroup) findViewById(R.id.rg_tab);
         mRadioGroup.setOnCheckedChangeListener(this);
         switchFragment(FragmentTag.HOME);

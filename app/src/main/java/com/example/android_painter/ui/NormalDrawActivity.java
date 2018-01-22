@@ -14,6 +14,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.android_painter.R;
 import com.example.android_painter.model.MethodInfo;
 import com.example.android_painter.ui.adapter.NormalQuickAdapter;
+import com.example.android_painter.ui.base.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,39 +25,32 @@ import java.util.List;
  * 常规绘制
  */
 
-public class NormalDrawActivity extends AppCompatActivity implements BaseQuickAdapter.OnItemClickListener {
+public class NormalDrawActivity extends BaseActivity implements BaseQuickAdapter.OnItemClickListener {
     private Context mContext;
     private RecyclerView mRecyclerView;
     private NormalQuickAdapter mNormalQuickAdapter;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_normal);
-
-        initParamsAndValues();
-
-        initViews();
-
+    protected Object setLayout() {
+        return R.layout.activity_normal;
     }
 
-    private void initParamsAndValues() {
+    @Override
+    protected void initParamsAndViews() {
         mContext = this;
 
         //init adapter
         mNormalQuickAdapter = new NormalQuickAdapter(initNormalInfo());
         mNormalQuickAdapter.setOnItemClickListener(this);
         mNormalQuickAdapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
-
     }
 
-    private void initViews() {
+    @Override
+    protected void initViews() {
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview_normal);
         mRecyclerView.setAdapter(mNormalQuickAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
-
     }
-
 
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {

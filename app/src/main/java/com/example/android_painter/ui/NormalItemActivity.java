@@ -16,6 +16,7 @@ import com.example.android_painter.view.NormalView;
 /**
  * Created by ZhangXinmin on 2017/7/13.
  * Copyright (c) 2017 . All rights reserved.
+ * 正常绘制展示页
  */
 
 public class NormalItemActivity extends BaseActivity {
