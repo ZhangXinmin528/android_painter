@@ -1,7 +1,7 @@
 # AndroidPainter
 ------
 [![License](https://img.shields.io/badge/License%20-Apache%202-337ab7.svg)](https://www.apache.org/licenses/LICENSE-2.0)
-[![MinSdk](https://img.shields.io/badge/%20MinSdk%20-%2012%2B%20-f0ad4e.svg)](https://android-arsenal.com/api?level=16)
+[![API](https://img.shields.io/badge/API-16%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=16)
 
 <p align="center">
   <img alt="logo" src="https://github.com/ZhangXinmin528/android_painter/blob/master/app/src/main/assets/logo.png"/>
