@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="arrays_quotation">
+        <item>指数</item>
+        <item>沪深</item>
+        <item>板块</item>
+    </string-array>
+</resources>

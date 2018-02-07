@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="dp_2">2dp</dimen>
     <dimen name="dp_4">4dp</dimen>
     <dimen name="dp_6">6dp</dimen>
     <dimen name="dp_8">8dp</dimen>
@@ -35,5 +36,7 @@
     <!--大战略-估值风险指数-->
     <dimen name="padding_risk">10dp</dimen>
     <dimen name="height_pie">14dp</dimen>
+
+    <dimen name="index_table_item_width">80dp</dimen>
 
 </resources>

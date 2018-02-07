@@ -39,11 +39,11 @@ public class ExploreFragment extends BaseFragment implements BaseQuickAdapter.On
     }
 
     @Override
-    void initParamsAndValues() {
+    public void initParamsAndValues() {
     }
 
     @Override
-    void initViews(View rootView) {
+    public void initViews(View rootView) {
 
         mRecyclerView = rootView.findViewById(R.id.recyclerview_explore);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));

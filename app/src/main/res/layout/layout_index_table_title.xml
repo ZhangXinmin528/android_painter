@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/dp_12">
+
+    <!--指数-->
+    <TextView
+        android:id="@+id/tv_trade_operation_market"
+        android:layout_width="@dimen/index_table_item_width"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="@string/quote_all_index_name"
+        android:textColor="@android:color/black" />
+
+    <com.example.android_painter.view.SimpleLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_2"
+        android:layout_marginStart="@dimen/dp_2"
+        android:layout_toEndOf="@+id/tv_trade_operation_market"
+        android:layout_toRightOf="@+id/tv_trade_operation_market"
+        android:focusable="false"
+        android:orientation="horizontal">
+
+        <com.example.android_painter.view.TableScrollView
+            android:id="@+id/table_trade_operation_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="false"
+            android:overScrollMode="never"
+            android:paddingBottom="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <!--最新-->
+                <TextView
+                    android:layout_width="@dimen/index_table_item_width"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|right"
+                    android:text="@string/quote_all_last"
+                    android:textColor="@android:color/black"
+                    tools:ignore="RtlHardcoded" />
+                <!--涨幅-->
+                <TextView
+                    android:layout_width="@dimen/index_table_item_width"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_2"
+                    android:layout_marginStart="@dimen/dp_2"
+                    android:gravity="center_vertical|right"
+                    android:text="@string/quote_all_increase_amount"
+                    android:textColor="@android:color/black"
+                    tools:ignore="RtlHardcoded,RtlSymmetry" />
+
+                <!--涨跌-->
+                <TextView
+                    android:layout_width="@dimen/index_table_item_width"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_2"
+                    android:layout_marginStart="@dimen/dp_2"
+                    android:gravity="center_vertical|right"
+                    android:text="@string/quote_all_highs_lows"
+                    android:textColor="@android:color/black"
+                    tools:ignore="RtlHardcoded,RtlSymmetry" />
+
+                <!--成交量-->
+                <TextView
+                    android:layout_width="@dimen/index_table_item_width"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_2"
+                    android:layout_marginStart="@dimen/dp_2"
+                    android:gravity="center_vertical|right"
+                    android:text="@string/quote_all_volume"
+                    android:textColor="@android:color/black"
+                    tools:ignore="RtlHardcoded,RtlSymmetry" />
+
+                <!--成交额-->
+                <TextView
+                    android:layout_width="@dimen/index_table_item_width"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_2"
+                    android:layout_marginStart="@dimen/dp_2"
+                    android:gravity="center_vertical|right"
+                    android:text="@string/quote_all_turn_volume"
+                    android:textColor="@android:color/black"
+                    tools:ignore="RtlHardcoded,RtlSymmetry" />
+            </LinearLayout>
+
+        </com.example.android_painter.view.TableScrollView>
+    </com.example.android_painter.view.SimpleLinearLayout>
+</RelativeLayout>

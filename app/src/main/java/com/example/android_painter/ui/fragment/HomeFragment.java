@@ -47,7 +47,7 @@ public class HomeFragment extends BaseFragment {
     }
 
     @Override
-    void initParamsAndValues() {
+    public void initParamsAndValues() {
         List<TabInfo> tabList = new ArrayList<>();
 
         tabList.add(new TabInfo("Android", "Android"));
@@ -60,7 +60,7 @@ public class HomeFragment extends BaseFragment {
     }
 
     @Override
-    void initViews(View rootView) {
+    public void initViews(View rootView) {
         Toolbar toolbar = rootView.findViewById(R.id.toolbar_home);
         toolbar.setTitle(R.string.all_home);
         ViewPager viewPager = rootView.findViewById(R.id.viewpager_home);

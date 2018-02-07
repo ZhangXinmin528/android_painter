@@ -75,7 +75,7 @@ public class NewsFragment extends BaseFragment implements OnRefreshListener, OnL
     }
 
     @Override
-    void initParamsAndValues() {
+    public void initParamsAndValues() {
         Bundle args = getArguments();
         if (args != null) {
             if (args.containsKey(PARAMS_ARGS)) {
@@ -93,7 +93,7 @@ public class NewsFragment extends BaseFragment implements OnRefreshListener, OnL
     }
 
     @Override
-    void initViews(View rootView) {
+    public void initViews(View rootView) {
         mRefreshLayout = rootView.findViewById(R.id.srLayout_news);
         mRefreshLayout.setEnableHeaderTranslationContent(false);//刷新时内容不偏移
         MaterialHeader materialHeader = (MaterialHeader) mRefreshLayout.getRefreshHeader();

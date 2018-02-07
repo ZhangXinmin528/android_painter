@@ -6,7 +6,7 @@ import android.widget.RadioGroup;
 
 import com.example.android_painter.R;
 import com.example.android_painter.ui.base.BaseActivity;
-import com.example.android_painter.ui.fragment.ApplyFragment;
+import com.example.android_painter.ui.fragment.QuotationsFragment;
 import com.example.android_painter.ui.fragment.ExploreFragment;
 import com.example.android_painter.ui.fragment.HomeFragment;
 import com.example.android_painter.ui.fragment.MoreFragment;
@@ -62,7 +62,7 @@ public class HomeActivity extends BaseActivity implements
                 break;
             case APPLY:
                 if (mApplyFragment == null) {
-                    mApplyFragment = ApplyFragment.newInstance();
+                    mApplyFragment = QuotationsFragment.newInstance();
                 }
                 showSelectedFragment(mApplyFragment, tag);
                 break;

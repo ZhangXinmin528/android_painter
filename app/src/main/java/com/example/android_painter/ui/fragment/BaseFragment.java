@@ -58,13 +58,13 @@ public abstract class BaseFragment extends Fragment {
     /**
      * 初始化参数
      */
-    abstract void initParamsAndValues();
+    public abstract void initParamsAndValues();
 
     /**
      * 初始化控件
      *
      * @param rootView
      */
-    abstract void initViews(View rootView);
+    protected abstract void initViews(View rootView);
 
 }

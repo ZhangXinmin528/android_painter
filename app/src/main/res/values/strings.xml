@@ -10,6 +10,7 @@
     <string name="all_more">更多</string>
     <string name="all_none">--</string>
     <string name="all_news_title">开发资讯</string>
+    <string name="all_quotation_title">市场行情</string>
 
     <!--menu-->
     <string name="menu_canvas">Show Canvas</string>
@@ -68,5 +69,13 @@
     <string name="news_publish_time">发布日期：%1$s</string>
     <string name="news_linked">链接：</string>
     <string name="news_author">作者：%1$s</string>
+
+    <!--行情-->
+    <string name="quote_all_index_name">指数</string>
+    <string name="quote_all_highs_lows">涨跌</string>
+    <string name="quote_all_volume">成交量</string>
+    <string name="quote_all_increase_amount">涨幅</string>
+    <string name="quote_all_turn_volume">成交额</string>
+    <string name="quote_all_last">最新</string>
 
 </resources>

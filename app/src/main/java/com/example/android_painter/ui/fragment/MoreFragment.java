@@ -36,12 +36,12 @@ public class MoreFragment extends BaseFragment {
     }
 
     @Override
-    void initParamsAndValues() {
+    public void initParamsAndValues() {
 
     }
 
     @Override
-    void initViews(View rootView) {
+    public void initViews(View rootView) {
 
     }
 

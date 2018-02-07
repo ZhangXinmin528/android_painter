@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/dp_10"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <!--title-->
+    <include
+        android:id="@+id/layout_index_table_title"
+        layout="@layout/layout_index_table_title" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_color_divider" />
+
+    <!--列表-->
+    <android.support.v7.widget.ListViewCompat
+        android:id="@+id/listview_index_stock"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/trade_color_divider"
+        android:dividerHeight="1dp"
+        android:overScrollMode="never"
+        android:scrollbars="none" />
+</android.support.v7.widget.LinearLayoutCompat>

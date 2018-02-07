@@ -21,6 +21,7 @@
     <color name="color_rb">#636363</color>
     <color name="color_bg">#ebedef</color>
     <color name="color_count_bg">#7dbababa</color>
+    <color name="trade_color_divider">#EEEEEE</color>
 
     <!--大盘:柱状图-->
     <color name="market_his_leve1">#a0a0a0</color>
