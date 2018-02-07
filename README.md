@@ -1,5 +1,5 @@
 # AndroidPainter
----
+------
 [![License](https://img.shields.io/badge/License%20-Apache%202-337ab7.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![MinSdk](https://img.shields.io/badge/%20MinSdk%20-%2012%2B%20-f0ad4e.svg)](https://android-arsenal.com/api?level=16)
 
@@ -7,12 +7,16 @@
   <img alt="logo" src="https://github.com/ZhangXinmin528/android_painter/blob/master/app/src/main/assets/logo.png"/>
 </p>
 
+#功能描述
+------
+####使用最新的Android知识和框架,展示最新的开发者资讯，自定义View的原理和使用的探索，后期会添加股票软件开发的一些指标等功能。
 
 > 
 项目模块：
 
 
 > 首页：首页主要展示Android，IOS，前端等最新资讯，多数为开发者自己的工作经验。
+>>数据来源于：[干货集中营](http://gank.io/api)  
 
 
 > 探索：主要为Android自定义View中的常用API的使用示例。
@@ -34,7 +38,7 @@
 
 
 License
--------
+------
 
     Copyright 2017 ZhangXinmin528
 

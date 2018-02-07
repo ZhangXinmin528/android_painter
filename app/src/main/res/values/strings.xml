@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">安卓绘制</string>
+    <string name="app_name">安卓Painter</string>
     <string name="app_tips">点击右上方菜单查看更多！</string>
     <string name="app_example">示例</string>
     <string name="action_settings">Settings</string>
