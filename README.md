@@ -7,12 +7,12 @@
   <img alt="logo" src="https://github.com/ZhangXinmin528/android_painter/blob/master/app/src/main/assets/logo.png"/>
 </p>
 
-#功能描述
+功能描述
 ------
-####使用最新的Android知识和框架,展示最新的开发者资讯，自定义View的原理和使用的探索，后期会添加股票软件开发的一些指标等功能。
+使用最新的Android知识和框架,展示最新的开发者资讯，自定义View的原理和使用的探索，后期会添加股票软件开发的一些指标等功能。
 
-> 
 项目模块：
+------
 
 
 > 首页：首页主要展示Android，IOS，前端等最新资讯，多数为开发者自己的工作经验。
@@ -27,7 +27,8 @@
 
 > 更多：暂无。
 
-## 特别感谢
+特别感谢
+------
 [okhttp-OkGo](https://github.com/jeasonlzy/okhttp-OkGo)  
 [sonic](https://github.com/Tencent/VasSonic)  
 [glide](https://github.com/bumptech/glide)  
@@ -55,7 +56,7 @@ License
     limitations under the License.
 
 
-#The End
+The End
 ---
 If you are interested in VasSonic, don't forget to STAR [android_painter](https://github.com/ZhangXinmin528/android_painter).  
 
