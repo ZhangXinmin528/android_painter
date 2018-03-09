@@ -1,5 +1,6 @@
 package com.example.android_painter.ui;
 
+import android.os.Debug;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.widget.RadioGroup;

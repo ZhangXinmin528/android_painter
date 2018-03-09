@@ -1,0 +1,72 @@
+{
+  "code": 200,
+  "message": "请求成功",
+  "data": [
+    {
+      "code": "300390",
+      "name": "天华超净",
+      "currPrice": 7.12,
+      "rise": 0.1005,
+      "change": 0.65,
+      "volumeRatio": 0.88,
+      "amplitude": 1.00,
+      "turnover": "1741.49亿",
+      "volume": "1.45亿"
+    },
+    {
+      "code": "399001",
+      "name": "深证成指",
+      "currPrice": 10875.68,
+      "rise": 0.0018,
+      "change": 19.43,
+      "volumeRatio": 0.83,
+      "amplitude": 0.0092,
+      "turnover": "2122.31亿",
+      "volume": "1.60亿"
+    },
+    {
+      "code": "399006",
+      "name": "创业板指",
+      "currPrice": 1795.69,
+      "rise": 0.0134,
+      "change": 23.68,
+      "volumeRatio": 0.81,
+      "amplitude": 0.0151,
+      "turnover": "685.04亿",
+      "volume": "4358.6万"
+    },
+    {
+      "code": "1B0300",
+      "name": "沪深300",
+      "currPrice": 4018.10,
+      "rise": 0.0004,
+      "change": 1.64,
+      "volumeRatio": 0.76,
+      "amplitude": 0.0117,
+      "turnover": "1181.98亿",
+      "volume": "8795.3万"
+    },
+    {
+      "code": "1B0016",
+      "name": "上证50",
+      "currPrice": 2863.99,
+      "rise": -0.0001,
+      "change": -0.19,
+      "volumeRatio": 0.76,
+      "amplitude": 0.0149,
+      "turnover": "360.66亿",
+      "volume": "2996.7万"
+    },
+    {
+      "code": "1B0905",
+      "name": "中证500",
+      "currPrice": 6064.10,
+      "rise": 0.0013,
+      "change": 7.76,
+      "volumeRatio": 0.89,
+      "amplitude": 0.0081,
+      "turnover": "821.14亿",
+      "volume": "6732.5万"
+    }
+  ]
+}
