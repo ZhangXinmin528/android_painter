@@ -5,11 +5,9 @@ import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.android_painter.R;
 import com.example.android_painter.ui.base.BaseActivity;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by ZhangXinmin on 2017/9/17.
@@ -21,6 +19,7 @@ public class SplashActivity extends BaseActivity implements View.OnClickListener
 
     private TextView mCountTimeTV;
     private CountDownTimer mTimer;
+    private LottieAnimationView mLottieAnimationView;
 
     @Override
     protected Object setLayout() {
@@ -35,6 +34,7 @@ public class SplashActivity extends BaseActivity implements View.OnClickListener
     protected void initViews() {
         mCountTimeTV = (TextView) findViewById(R.id.tv_splash_count);
         mCountTimeTV.setOnClickListener(this);
+        mLottieAnimationView = findViewById(R.id.lottie_splash);
 
         mTimer = new CountDownTimer(4000, 1000) {
             @Override
@@ -52,6 +52,8 @@ public class SplashActivity extends BaseActivity implements View.OnClickListener
     protected void onStart() {
         super.onStart();
         mTimer.start();
+        mLottieAnimationView.setAnimation("animated_laptop_.json");
+        mLottieAnimationView.playAnimation();
     }
 
 
@@ -59,7 +61,7 @@ public class SplashActivity extends BaseActivity implements View.OnClickListener
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tv_splash_count://计时
-                if (mTimer!=null){
+                if (mTimer != null) {
                     mTimer.cancel();
                 }
                 jumpToHome();
@@ -78,8 +80,11 @@ public class SplashActivity extends BaseActivity implements View.OnClickListener
 
     @Override
     protected void onDestroy() {
-        if (mTimer!=null){
+        if (mTimer != null) {
             mTimer.cancel();
+        }
+        if (mLottieAnimationView != null) {
+            mLottieAnimationView.cancelAnimation();
         }
         super.onDestroy();
     }

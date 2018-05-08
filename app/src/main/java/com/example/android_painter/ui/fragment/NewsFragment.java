@@ -29,7 +29,7 @@ import com.lzy.okgo.model.Response;
 import com.scwang.smartrefresh.header.MaterialHeader;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
+import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.text.DateFormat;
@@ -44,7 +44,7 @@ import static com.example.android_painter.ui.web.WebActivity.PARAMS_URL;
  * 新闻列表
  */
 
-public class NewsFragment extends BaseFragment implements OnRefreshListener, OnLoadmoreListener
+public class NewsFragment extends BaseFragment implements OnRefreshListener, OnLoadMoreListener
         , BaseQuickAdapter.OnItemClickListener {
 
     private static final String TAG = NewsFragment.class.getSimpleName();
@@ -101,10 +101,10 @@ public class NewsFragment extends BaseFragment implements OnRefreshListener, OnL
             materialHeader.setShowBezierWave(false);//关闭刷新时背景
         }
         mRefreshLayout.setOnRefreshListener(this);//刷新监听
-        mRefreshLayout.setOnLoadmoreListener(this);//加载更多监听
+        mRefreshLayout.setOnLoadMoreListener(this);//加载更多监听
 
-        mRefreshLayout.setEnableLoadmore(true);//开启上拉加载更多
-        mRefreshLayout.setEnableAutoLoadmore(false);//惯性滑动底部自动加载更多
+        mRefreshLayout.setEnableLoadMore(true);//开启上拉加载更多
+        mRefreshLayout.setEnableLoadMore(false);//惯性滑动底部自动加载更多
         mRefreshLayout.autoRefresh(200);
 
         mRecyclerView = rootView.findViewById(R.id.recyclerview_news);
@@ -191,11 +191,6 @@ public class NewsFragment extends BaseFragment implements OnRefreshListener, OnL
     }
 
     @Override
-    public void onLoadmore(RefreshLayout refreshlayout) {
-        requestDataFromNet(false);
-    }
-
-    @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
         NewsInfo info = (NewsInfo) adapter.getData().get(position);
         if (info != null) {
@@ -203,5 +198,10 @@ public class NewsFragment extends BaseFragment implements OnRefreshListener, OnL
             web.putExtra(PARAMS_URL, info.getUrl());
             startActivity(web);
         }
+    }
+
+    @Override
+    public void onLoadMore(RefreshLayout refreshLayout) {
+        requestDataFromNet(false);
     }
 }

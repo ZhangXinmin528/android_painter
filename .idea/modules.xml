@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/android_painter.iml" filepath="$PROJECT_DIR$/android_painter.iml" />
       <module fileurl="file://F:\android_painter_master\android_painter.iml" filepath="F:\android_painter_master\android_painter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/android_painter_master.iml" filepath="$PROJECT_DIR$/android_painter_master.iml" />
+      <module fileurl="file://E:\android_study\project\android_painter\android_painter_master.iml" filepath="E:\android_study\project\android_painter\android_painter_master.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

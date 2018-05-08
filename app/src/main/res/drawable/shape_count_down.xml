@@ -5,6 +5,9 @@
 
     <solid android:color="@color/color_count_bg" />
 
+    <stroke
+        android:width="0.5dp"
+        android:color="@android:color/white" />
     <padding
         android:bottom="@dimen/dp_6"
         android:left="@dimen/dp_12"
