@@ -4,6 +4,8 @@ import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.example.android_painter.BuildConfig;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -28,6 +30,7 @@ public final class LogUtil {
         if (!TextUtils.isEmpty(message)) {
             logI(TAG, getCurrentTime() + "==>" + message);
         }
+
     }
 
     /**
@@ -39,6 +42,7 @@ public final class LogUtil {
         if (!TextUtils.isEmpty(message)) {
             logI(TAG, message);
         }
+
     }
 
     /**
@@ -48,7 +52,10 @@ public final class LogUtil {
      * @param message message
      */
     public static void logI(String tag, String message) {
-        Log.i(tag, message);
+        if (BuildConfig.LOG_ENABLE) {
+            Log.i(tag, message);
+        }
+
     }
 
     /**
@@ -80,7 +87,9 @@ public final class LogUtil {
      * @param message message
      */
     public static void logE(String tag, String message) {
-        Log.e(tag, message);
+        if (BuildConfig.LOG_ENABLE) {
+            Log.e(tag, message);
+        }
     }
 
     /**

@@ -3,7 +3,6 @@ package com.example.android_painter.app;
 import android.app.Application;
 
 import com.example.android_painter.http.OkHttp;
-import com.squareup.leakcanary.LeakCanary;
 import com.tencent.bugly.crashreport.CrashReport;
 
 /**
@@ -25,12 +24,12 @@ public class PainterApplication extends Application {
         CrashReport.initCrashReport(getApplicationContext(), "211fc19956", true);
 
         //config LeakCanary
-        if (LeakCanary.isInAnalyzerProcess(this)) {
-            // This process is dedicated to LeakCanary for heap analysis.
-            // You should not init your app in this process.
-            return;
-        }
-        LeakCanary.install(this);
+//        if (LeakCanary.isInAnalyzerProcess(this)) {
+//            // This process is dedicated to LeakCanary for heap analysis.
+//            // You should not init your app in this process.
+//            return;
+//        }
+//        LeakCanary.install(this);
 
     }
 
