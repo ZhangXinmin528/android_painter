@@ -8,6 +8,6 @@ package com.example.android_painter.util;
 public enum FragmentTag {
     HOME,
     EXPLORE,
-    APPLY,
+    QUOTATION,
     MORE
 }

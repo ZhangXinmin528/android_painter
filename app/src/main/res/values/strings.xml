@@ -12,7 +12,17 @@
     <string name="all_news_title">开发资讯</string>
     <string name="all_quotation_title">市场行情</string>
 
+    <string name="nav_item_attachment">Attachment</string>
+    <string name="nav_item_images">Images</string>
+    <string name="nav_item_location">My Location</string>
+    <string name="nav_sub_menu">Sub Menu</string>
+    <string name="nav_sub_menu_item01">Sub Menu Item 1</string>
+    <string name="nav_sub_menu_item02">Sub Menu Item 2</string>
+    <string name="drawer_header_text">Drawer Header</string>
+
+
     <!--menu-->
+    <string name="menu_search">Search</string>
     <string name="menu_canvas">Show Canvas</string>
     <string name="menu_Paint">Show Paint</string>
     <string name="menu_Path">Show Path</string>

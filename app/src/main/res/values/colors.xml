@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#0069fc</color>
+    <color name="colorPrimaryDark">#4452ac</color>
     <color name="colorAccent">#FF4081</color>
 
     <color name="colorWhite">#FFFFFF</color>
@@ -17,11 +17,17 @@
     <color name="colorLightBlue">#0069fc</color>
     <color name="colorLightGray">#eceaea</color>
 
+    <color name="color_status_bar">#2579ff</color>
+
     <color name="color_rb_selected">#2196F3</color>
     <color name="color_rb">#636363</color>
     <color name="color_bg">#ebedef</color>
     <color name="color_count_bg">#7dbababa</color>
     <color name="trade_color_divider">#EEEEEE</color>
+
+    <color name="tab_checked">#0069fc</color>
+    <color name="tab_unchecked">#8b8b8b</color>
+    <color name="title_black">#222222</color>
 
     <!--大盘:柱状图-->
     <color name="market_his_leve1">#a0a0a0</color>
