@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme.AppBarOverlay.ToolBar"
         app:navigationIcon="?attr/homeAsUpIndicator" />
 
-    <com.example.android_painter.view.NormalView
+    <com.zxm.android_painter.view.NormalView
         android:id="@+id/normalview"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

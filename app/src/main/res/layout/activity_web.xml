@@ -11,7 +11,7 @@
         android:background="@color/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <com.example.android_painter.ui.web.QuickWebView
+    <com.zxm.android_painter.ui.web.QuickWebView
         android:id="@+id/webview"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

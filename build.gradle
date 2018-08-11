@@ -6,7 +6,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:3.1.4'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -33,12 +33,12 @@ ext {
 
     // App dependencies
     supportLibraryVersion = '27.1.1'
-    constraintVersion = '1.1.0'
+    constraintLayoutVersion = '1.1.2'
 
     smartrefreshVersion = '1.0.5.1'
     glideVersion = '4.0.0'
     lottieVersion = '2.5.0-beta3'
-    loggerVersion = '2.1.1'
+    loggerVersion = '2.2.0'
     okgoVersion = '3.0.4'
     fastjsonVersion = '1.2.46'
     eventbusVersion = '3.1.1'

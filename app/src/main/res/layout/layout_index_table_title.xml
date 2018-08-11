@@ -14,7 +14,7 @@
         android:text="@string/quote_all_index_name"
         android:textColor="@android:color/black" />
 
-    <com.example.android_painter.view.SimpleLinearLayout
+    <com.zxm.android_painter.view.SimpleLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/dp_2"
@@ -24,7 +24,7 @@
         android:focusable="false"
         android:orientation="horizontal">
 
-        <com.example.android_painter.view.TableScrollView
+        <com.zxm.android_painter.view.TableScrollView
             android:id="@+id/table_trade_operation_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -90,6 +90,6 @@
                     tools:ignore="RtlHardcoded,RtlSymmetry" />
             </LinearLayout>
 
-        </com.example.android_painter.view.TableScrollView>
-    </com.example.android_painter.view.SimpleLinearLayout>
+        </com.zxm.android_painter.view.TableScrollView>
+    </com.zxm.android_painter.view.SimpleLinearLayout>
 </RelativeLayout>
