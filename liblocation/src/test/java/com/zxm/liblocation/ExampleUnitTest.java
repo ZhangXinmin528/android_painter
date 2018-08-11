@@ -1,4 +1,4 @@
-package com.example.liblocation;
+package com.zxm.liblocation;
 
 import org.junit.Test;
 
