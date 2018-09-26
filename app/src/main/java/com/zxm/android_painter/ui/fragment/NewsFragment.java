@@ -3,9 +3,6 @@ package com.zxm.android_painter.ui.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.text.TextUtilsCompat;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -22,7 +19,6 @@ import com.zxm.android_painter.model.NewsInfo;
 import com.zxm.android_painter.model.TabInfo;
 import com.zxm.android_painter.ui.adapter.NewsRecyclerAdapter;
 import com.zxm.android_painter.ui.web.WebActivity;
-import com.zxm.android_painter.util.LogUtil;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
@@ -31,8 +27,8 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
+import com.zxm.libcommon.Logger;
 
-import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -176,10 +172,10 @@ public class NewsFragment extends BaseFragment implements OnRefreshListener, OnL
                     mPage++;
                 }
             } else {
-                LogUtil.logE("未请求到数据");
+                Logger.e(TAG, "未请求到数据");
             }
         } else {
-            LogUtil.logE("未请求到数据");
+            Logger.e(TAG, "未请求到数据");
         }
 
     }

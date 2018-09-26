@@ -1,27 +1,15 @@
 package com.zxm.android_painter.ui.fragment;
 
-import android.graphics.Color;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.zxm.android_painter.R;
 import com.zxm.android_painter.model.TabInfo;
 import com.zxm.android_painter.ui.adapter.NewsTabAdapter;
-import com.zxm.android_painter.util.LogUtil;
+import com.zxm.libcommon.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,6 +57,7 @@ public class HomeFragment extends BaseFragment {
         tabLayout.setupWithViewPager(viewPager);
         viewPager.setOffscreenPageLimit(2);
     }
+
 
     @Override
     public void onDestroyView() {

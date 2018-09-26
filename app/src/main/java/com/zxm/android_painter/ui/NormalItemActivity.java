@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -45,21 +46,27 @@ public class NormalItemActivity extends BaseActivity {
 
     @Override
     protected void initViews() {
+
         Toolbar toolbar = findViewById(R.id.toolbar_normal_item);
+        setSupportActionBar(toolbar);
         if (mInfo != null) {
             toolbar.setTitle(mInfo.getName());
+        }
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
         }
         mNormalView = (NormalView) findViewById(R.id.normalview);
         mNormalView.setmDrawType(mInfo.getModel());
     }
 
     @Override
-    public boolean onContextItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
                 break;
         }
-        return super.onContextItemSelected(item);
+        return super.onOptionsItemSelected(item);
     }
 }

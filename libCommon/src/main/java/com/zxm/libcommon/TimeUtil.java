@@ -1,12 +1,12 @@
-package com.zxm.android_painter.util;
+package com.zxm.libcommon;
 
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
-import java.security.PublicKey;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * Created by ZhangXinmin on 2017/9/24.
@@ -14,8 +14,12 @@ import java.util.Date;
  */
 
 public final class TimeUtil {
-    public static final SimpleDateFormat DEFAULT_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    public static final SimpleDateFormat DAY_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
+
+    public static final SimpleDateFormat DEFAULT_FORMAT
+            = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+
+    public static final SimpleDateFormat DAY_FORMAT
+            = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 
     private TimeUtil() {
         throw new UnsupportedOperationException("You must not do this!");
@@ -23,6 +27,7 @@ public final class TimeUtil {
 
     /**
      * 获取指定格式的时间戳
+     *
      * @param time
      * @param format
      * @return

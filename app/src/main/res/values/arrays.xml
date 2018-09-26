@@ -5,4 +5,22 @@
         <item>沪深</item>
         <item>板块</item>
     </string-array>
+
+    <string-array name="share_type">
+        <item>纯文本</item>
+        <item>仿锤子便签</item>
+    </string-array>
+
+    <!--设置页面：主题颜色-->
+    <string-array name="arrays_theme_color_title">
+        <item>青石色</item>
+        <item>山茱萸</item>
+        <item>绿篱</item>
+        <item>樱草黄</item>
+        <item>烈焰红</item>
+        <item>天堂岛</item>
+        <item>甘蓝</item>
+        <item>粉蓍草</item>
+        <item>尼亚加拉</item>
+    </string-array>
 </resources>

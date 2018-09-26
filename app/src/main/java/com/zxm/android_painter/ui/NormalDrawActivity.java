@@ -4,9 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -15,6 +18,7 @@ import com.zxm.android_painter.R;
 import com.zxm.android_painter.model.MethodInfo;
 import com.zxm.android_painter.ui.adapter.NormalQuickAdapter;
 import com.zxm.android_painter.ui.base.BaseActivity;
+import com.zxm.libcommon.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,6 +51,13 @@ public class NormalDrawActivity extends BaseActivity implements BaseQuickAdapter
 
     @Override
     protected void initViews() {
+        Toolbar toolbar = findViewById(R.id.toolbar_normal);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview_normal);
         mRecyclerView.setAdapter(mNormalQuickAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
@@ -62,15 +73,14 @@ public class NormalDrawActivity extends BaseActivity implements BaseQuickAdapter
         intent.putExtra("bundle", bundle);
         startActivityForResult(intent, 100);
     }
-
     @Override
-    public boolean onContextItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
                 break;
         }
-        return super.onContextItemSelected(item);
+        return super.onOptionsItemSelected(item);
     }
 
     //TODO:测试数据

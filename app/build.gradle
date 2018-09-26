@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion '27.0.3'
+    buildToolsVersion rootProject.ext.buildToolsVersion
     defaultConfig {
         applicationId "com.zxm.android_painter"
         minSdkVersion rootProject.ext.minSdkVersion
@@ -36,7 +36,7 @@ android {
     defaultConfig {
         ndk {
             // 设置支持的SO库架构
-            abiFilters 'armeabi' , 'x86'//, 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+            abiFilters 'armeabi', 'x86'//, 'armeabi-v7a', 'x86_64', 'arm64-v8a'
         }
     }
 
@@ -57,13 +57,10 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     testImplementation 'junit:junit:4.12'
-
     implementation "com.android.support:design:$rootProject.supportLibraryVersion"
     implementation "com.android.support:cardview-v7:$rootProject.supportLibraryVersion"
     implementation "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
     implementation "com.android.support.constraint:constraint-layout:$rootProject.constraintLayoutVersion"
-
-    //UI
 
     //刷新和加载控件
     implementation "com.scwang.smartrefresh:SmartRefreshLayout:$rootProject.smartrefreshVersion"
@@ -77,7 +74,7 @@ dependencies {
     annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.glideVersion"
 
     //Tecent Webview
-    implementation 'com.tencent.sonic:sdk:3.0.0-alpha'
+    implementation 'com.tencent.sonic:sdk:3.0.0'
 
     //动画
     implementation "com.airbnb.android:lottie:$rootProject.lottieVersion"
@@ -99,6 +96,12 @@ dependencies {
     implementation "com.tencent.bugly:nativecrashreport:$rootProject.nativecrashreportVersion"
 
     //检测内存泄露
-//    implementation "com.squareup.leakcanary:leakcanary-android:$rootProject.leakcanaryVersion"
-//    implementation "com.squareup.leakcanary:leakcanary-android-no-op:$rootProject.leakcanaryVersion"
+
+    //    implementation "com.squareup.leakcanary:leakcanary-android:$rootProject.leakcanaryVersion"
+
+    //    implementation "com.squareup.leakcanary:leakcanary-android-no-op:$rootProject.leakcanaryVersion"
+
+    //定位模块
+    implementation project(':libLocation')
+    implementation project(':libCommon')
 }

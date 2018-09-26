@@ -12,6 +12,7 @@ import com.zxm.android_painter.model.ExploreInfo;
 import com.zxm.android_painter.ui.ClipActivity;
 import com.zxm.android_painter.ui.NormalDrawActivity;
 import com.zxm.android_painter.ui.adapter.ExploreRecyclerAdapter;
+import com.zxm.libcommon.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,5 +81,4 @@ public class ExploreFragment extends BaseFragment implements BaseQuickAdapter.On
                 break;
         }
     }
-
 }

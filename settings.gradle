@@ -1,1 +1,1 @@
-include ':app', ':liblocation', ':liblocation'
+include ':app', ':libLocation', ':libCommon'

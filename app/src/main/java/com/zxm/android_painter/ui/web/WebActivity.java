@@ -7,7 +7,6 @@ import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
 import android.webkit.WebChromeClient;
@@ -22,11 +21,11 @@ import android.widget.Toast;
 
 import com.zxm.android_painter.R;
 import com.zxm.android_painter.ui.base.BaseActivity;
-import com.zxm.android_painter.util.LogUtil;
 import com.tencent.sonic.sdk.SonicConfig;
 import com.tencent.sonic.sdk.SonicEngine;
 import com.tencent.sonic.sdk.SonicSession;
 import com.tencent.sonic.sdk.SonicSessionConfig;
+import com.zxm.libcommon.Logger;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
@@ -80,7 +79,7 @@ public class WebActivity extends BaseActivity {
             // this only happen when a same sonic session is already running,
             // u can comment following codes to feedback as a default mode.
             Toast.makeText(mContext, "create sonic session fail", Toast.LENGTH_LONG).show();
-            LogUtil.logE(TAG + ":create session fail");
+            Logger.e(TAG, ":create session fail");
         }
     }
 

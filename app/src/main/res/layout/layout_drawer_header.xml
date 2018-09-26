@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
-    android:background="@color/colorPrimaryDark"
+    android:layout_height="120dp"
+    android:background="@color/color_sunny_day"
     android:baselineAligned="false"
     android:gravity="bottom"
     android:orientation="vertical"
     android:padding="16dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-    <TextView
-        android:layout_width="match_parent"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_drawer_header"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/drawer_header_text"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:layout_gravity="center" />
 
 </LinearLayout>

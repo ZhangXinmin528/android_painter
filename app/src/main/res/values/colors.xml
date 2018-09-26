@@ -35,4 +35,12 @@
     <color name="market_his_leve3">#d0d0d0</color>
     <color name="market_his_leve4">#e7e7e7</color>
     <color name="market_his_leve5">#ffffff</color>
+
+    <!--天气-->
+    <color name="color_sunny_day">#51c0f8</color>
+    <color name="color_sunny_night">#7f9ee9</color>
+    <color name="color_cloudy">#4dbfef</color>
+    <color name="color_overcast">#6d8db1</color>//阴天
+    <color name="color_rain">#6188da</color>
+
 </resources>

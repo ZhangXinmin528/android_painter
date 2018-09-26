@@ -9,6 +9,8 @@ import com.airbnb.lottie.LottieAnimationView;
 import com.zxm.android_painter.R;
 import com.zxm.android_painter.ui.base.BaseActivity;
 
+import static com.airbnb.lottie.LottieDrawable.INFINITE;
+
 /**
  * Created by ZhangXinmin on 2017/9/17.
  * Copyright (c) 2017 . All rights reserved.
@@ -50,7 +52,8 @@ public class SplashActivity extends BaseActivity implements View.OnClickListener
     protected void onStart() {
         super.onStart();
         mTimer.start();
-        mLottieAnimationView.setAnimation("animated_laptop_.json");
+        mLottieAnimationView.setAnimation("peli-canon.json");
+        mLottieAnimationView.setRepeatCount(INFINITE);
         mLottieAnimationView.playAnimation();
     }
 

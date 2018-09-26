@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="天气">
+        <ListPreference
+            android:defaultValue="纯文本"
+            android:dialogTitle="天气分享形式"
+            android:entries="@array/share_type"
+            android:entryValues="@array/share_type"
+            android:key="weather_share_type"
+            android:title="分享形式"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="通用">
+        <Preference
+            android:key="theme_color"
+            android:title="主题色"/>
+
+        <Preference
+            android:key="clean_cache"
+            android:title="清除缓存"/>
+    </PreferenceCategory>
+</PreferenceScreen>

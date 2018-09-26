@@ -4,7 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/android_painter.iml" filepath="$PROJECT_DIR$/android_painter.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/liblocation/liblocation.iml" filepath="$PROJECT_DIR$/liblocation/liblocation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libCommon/libCommon.iml" filepath="$PROJECT_DIR$/libCommon/libCommon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libLocation/libLocation.iml" filepath="$PROJECT_DIR$/libLocation/libLocation.iml" />
     </modules>
   </component>
 </project>
