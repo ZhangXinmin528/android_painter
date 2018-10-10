@@ -98,9 +98,9 @@ public class NewsFragment extends BaseFragment implements OnRefreshListener, OnL
         }
         mRefreshLayout.setOnRefreshListener(this);//刷新监听
         mRefreshLayout.setOnLoadMoreListener(this);//加载更多监听
-
+        //禁止加载时操作列表
+        mRefreshLayout.setDisableContentWhenLoading(false);
         mRefreshLayout.setEnableLoadMore(true);//开启上拉加载更多
-        mRefreshLayout.setEnableLoadMore(false);//惯性滑动底部自动加载更多
         mRefreshLayout.autoRefresh(200);
 
         mRecyclerView = rootView.findViewById(R.id.recyclerview_news);
@@ -143,9 +143,9 @@ public class NewsFragment extends BaseFragment implements OnRefreshListener, OnL
                         super.onFinish();
                         if (isRefresh) {
                             mRefreshLayout.finishRefresh();
-                            mRefreshLayout.resetNoMoreData();
+//                            mRefreshLayout.setNoMoreData(true);
                         } else {
-                            mRefreshLayout.finishLoadmore();
+                            mRefreshLayout.finishLoadMore();
                         }
                     }
                 });

@@ -1,15 +1,12 @@
-package com.zxm.android_painter.ui;
+package com.zxm.android_painter.ui.normal;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -18,7 +15,6 @@ import com.zxm.android_painter.R;
 import com.zxm.android_painter.model.MethodInfo;
 import com.zxm.android_painter.ui.adapter.NormalQuickAdapter;
 import com.zxm.android_painter.ui.base.BaseActivity;
-import com.zxm.libcommon.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,9 +66,10 @@ public class NormalDrawActivity extends BaseActivity implements BaseQuickAdapter
         Intent intent = new Intent(mContext, NormalItemActivity.class);
         Bundle bundle = new Bundle();
         bundle.putSerializable("item", info);
-        intent.putExtra("bundle", bundle);
-        startActivityForResult(intent, 100);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

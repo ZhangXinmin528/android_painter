@@ -6,15 +6,15 @@
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_normal_item"
+        android:id="@+id/toolbar_paint_item"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         android:background="@color/colorPrimaryDark"
         android:theme="@style/AppTheme.AppBarOverlay.ToolBar"
         app:navigationIcon="?android:attr/homeAsUpIndicator" />
 
-    <com.zxm.android_painter.view.NormalView
-        android:id="@+id/normalview"
+    <com.zxm.android_painter.view.PaintView
+        android:id="@+id/paintview"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

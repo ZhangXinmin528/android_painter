@@ -27,7 +27,7 @@ public class NormalQuickAdapter extends BaseQuickAdapter<MethodInfo, BaseViewHol
     protected void convert(BaseViewHolder helper, MethodInfo item) {
 
         helper.setText(R.id.tv_normal_title, item.getName())
-                .setImageResource(R.id.iv_icon, item.getIconId())
+                .setImageResource(R.id.tv_icon, item.getIconId())
                 .setText(R.id.tv_nomal_method,
                         mContext.getString(R.string.normal_method, item.getMethod()))
                 .setText(R.id.tv_normal_desc, mContext.getString(R.string.normal_method_desc, item.getDesc()))

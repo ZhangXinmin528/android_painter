@@ -51,13 +51,23 @@
 
         <!--常规绘制-->
         <activity
-            android:name="com.zxm.android_painter.ui.NormalDrawActivity"
+            android:name="com.zxm.android_painter.ui.normal.NormalDrawActivity"
             android:screenOrientation="portrait" />
         <!--显示界面-->
         <activity
-            android:name="com.zxm.android_painter.ui.NormalItemActivity"
+            android:name="com.zxm.android_painter.ui.normal.NormalItemActivity"
             android:hardwareAccelerated="false"
             android:screenOrientation="portrait" />
+        <!--Paint-->
+        <activity
+            android:name=".ui.paint.PaintActivity"
+            android:screenOrientation="portrait" />
+
+        <!--PaintItem-->
+        <activity
+            android:name=".ui.paint.PainItemActivity"
+            android:screenOrientation="portrait" />
+
         <!--裁剪-->
         <activity
             android:name="com.zxm.android_painter.ui.ClipActivity"

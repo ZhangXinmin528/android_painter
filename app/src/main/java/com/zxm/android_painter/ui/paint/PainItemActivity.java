@@ -1,63 +1,58 @@
-package com.zxm.android_painter.ui;
+package com.zxm.android_painter.ui.paint;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.zxm.android_painter.R;
-import com.zxm.android_painter.model.MethodInfo;
+import com.zxm.android_painter.model.PaintInfo;
 import com.zxm.android_painter.ui.base.BaseActivity;
-import com.zxm.android_painter.view.NormalView;
+import com.zxm.android_painter.view.PaintView;
+
+import java.io.Serializable;
 
 /**
- * Created by ZhangXinmin on 2017/7/13.
- * Copyright (c) 2017 . All rights reserved.
- * 正常绘制展示页
+ * Created by ZhangXinmin on 2018/10/10.
+ * Copyright (c) 2018 . All rights reserved.
+ * Paint单项属性解析
  */
+public class PainItemActivity extends BaseActivity {
 
-public class NormalItemActivity extends BaseActivity {
-    private MethodInfo mInfo;
-    private NormalView mNormalView;
+    public static final String PARAMS_PAINT_INFO = "paint_info";
+    private PaintInfo mPaintInfo;
+    private PaintView mPaintView;
 
     @Override
     protected Object setLayout() {
-        return R.layout.activity_normal_item;
+        return R.layout.activity_paint_item;
     }
 
     @Override
     protected void initParamsAndViews() {
+        mContext = this;
 
         Intent intent = getIntent();
         if (intent != null) {
-            Bundle bundle = intent.getBundleExtra("bundle");
-            if (bundle != null) {
-                if (bundle.getSerializable("item") != null) {
-                    mInfo = (MethodInfo) bundle.getSerializable("item");
-                }
+            Bundle bundle = intent.getExtras();
+            if (bundle != null && bundle.containsKey(PARAMS_PAINT_INFO)) {
+                mPaintInfo = (PaintInfo) bundle.getSerializable(PARAMS_PAINT_INFO);
             }
         }
-
     }
 
     @Override
     protected void initViews() {
-
         Toolbar toolbar = findViewById(R.id.toolbar_normal_item);
         setSupportActionBar(toolbar);
-        if (mInfo != null) {
-            toolbar.setTitle(mInfo.getName());
-        }
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setTitle(mPaintInfo.getTitle());
         }
-        mNormalView = (NormalView) findViewById(R.id.normalview);
-        mNormalView.setmDrawType(mInfo.getModel());
+
+        mPaintView = findViewById(R.id.paintview);
     }
 
     @Override

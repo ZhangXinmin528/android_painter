@@ -4,15 +4,13 @@ import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.zxm.android_painter.R;
 import com.zxm.android_painter.model.ExploreInfo;
 import com.zxm.android_painter.ui.ClipActivity;
-import com.zxm.android_painter.ui.NormalDrawActivity;
+import com.zxm.android_painter.ui.normal.NormalDrawActivity;
 import com.zxm.android_painter.ui.adapter.ExploreRecyclerAdapter;
-import com.zxm.libcommon.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,7 +67,6 @@ public class ExploreFragment extends BaseFragment implements BaseQuickAdapter.On
 
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-        Toast.makeText(mContext, " 点击了：" + position, Toast.LENGTH_SHORT).show();
         switch (position) {
             case 0:
                 Intent canvas = new Intent(mContext, NormalDrawActivity.class);

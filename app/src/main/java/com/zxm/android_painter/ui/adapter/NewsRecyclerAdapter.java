@@ -70,6 +70,7 @@ public class NewsRecyclerAdapter extends BaseQuickAdapter<NewsInfo, BaseViewHold
             logo.setVisibility(View.VISIBLE);
             GlideApp.with(mContext)
                     .load(imageList.get(0))
+                    .placeholder(R.mipmap.ic_launcher)
                     .into(logo);
         } else {
             logo.setVisibility(View.GONE);

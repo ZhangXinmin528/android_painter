@@ -22,14 +22,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
+            <TextView
                 android:id="@+id/tv_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_drawer" />
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/shape_paint_dot" />
 
             <TextView
-                android:id="@+id/tv_normal_title"
+                android:id="@+id/tv_paint_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -43,14 +44,14 @@
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/tv_nomal_method"
+            android:id="@+id/tv_paint_method"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/dp_4"
             android:text="@string/normal_method" />
 
         <TextView
-            android:id="@+id/tv_normal_desc"
+            android:id="@+id/tv_paint_desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_8"
@@ -59,6 +60,5 @@
             android:text="@string/normal_method_desc" />
 
     </LinearLayout>
-
 
 </android.support.v7.widget.CardView>

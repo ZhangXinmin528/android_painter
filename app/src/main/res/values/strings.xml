@@ -28,6 +28,7 @@
 
     <!--canvas-->
     <string name="canvas_draw">常规绘制</string>
+    <string name="canvas_paint">Paint详解</string>
     <string name="canvas_clip">范围裁切</string>
     <string name="canvas_matrix">矩阵变换</string>
 
