@@ -36,9 +36,10 @@
     <string name="clip_path">clipPath</string>
     <string name="clip_rect">clipRect</string>
 
-    <!--desc-->
+    <!--探索：desc-->
     <string name="desc_common">常规绘制：将会介绍Canvas里的常用绘制方法。如绘制颜色，绘制常规的几何图形等。</string>
     <string name="desc_clip">范围裁切：将会介绍Canvas里的常用绘制方法。如绘制颜色，绘制常规的几何图形等。</string>
+    <string name="desc_paint">Paint相关：将会介绍自定义View中Paint相关API。</string>
 
     <string name="normal_method">方法名：%1$s</string>
     <string name="normal_method_desc">作用：%1$s</string>

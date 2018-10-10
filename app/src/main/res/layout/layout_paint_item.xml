@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="@dimen/dp_8"
-                android:layout_toEndOf="@+id/tv_icon"
+                android:layout_toRightOf="@+id/tv_icon"
                 android:text="Title"
                 android:textColor="@android:color/black"
                 android:textSize="18sp"

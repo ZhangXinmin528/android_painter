@@ -1,5 +1,7 @@
 package com.zxm.android_painter.ui.paint;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -15,6 +17,8 @@ import com.zxm.android_painter.ui.base.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.zxm.android_painter.ui.paint.PaintItemActivity.PARAMS_PAINT_INFO;
 
 /**
  * Created by ZhangXinmin on 2018/10/9.
@@ -35,9 +39,9 @@ public class PaintActivity extends BaseActivity implements BaseQuickAdapter.OnIt
     protected void initParamsAndViews() {
         mContext = this;
         mDataList = new ArrayList<>();
+        initData();
         mAdapter = new PaintAdapter(mContext, mDataList);
         mAdapter.setOnItemClickListener(this);
-        initData();
     }
 
     @Override
@@ -65,19 +69,34 @@ public class PaintActivity extends BaseActivity implements BaseQuickAdapter.OnIt
     }
 
     //TODO:测试数据
-    private List<PaintInfo> initData() {
-        List<PaintInfo> list = new ArrayList<>();
-        list.add(new PaintInfo("设置颜色",
+    private void initData() {
+        mDataList.add(new PaintInfo(
+                "设置画笔颜色",
+                "Set the paint's color.",
                 "setColor",
-                ""));
-        return list;
+                "setColor"));
+
+        mDataList.add(new PaintInfo(
+                "设置画笔颜色",
+                "Helper to setColor(), that takes a,r,g,b and constructs the color int",
+                "setARGB",
+                "setARGB"));
+        mDataList.add(new PaintInfo(
+                "线性渐变",
+                "Create a shader that draws a linear gradient along a line.",
+                "setLinearGradientShader",
+                "LinearGradient"));
     }
 
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
         PaintInfo info = (PaintInfo) adapter.getItem(position);
         if (info != null) {
-
+            Intent intent = new Intent(mContext,PaintItemActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putSerializable(PARAMS_PAINT_INFO,info);
+            intent.putExtras(bundle);
+            startActivity(intent);
         }
     }
 }

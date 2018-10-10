@@ -11,6 +11,7 @@ import com.zxm.android_painter.model.ExploreInfo;
 import com.zxm.android_painter.ui.ClipActivity;
 import com.zxm.android_painter.ui.normal.NormalDrawActivity;
 import com.zxm.android_painter.ui.adapter.ExploreRecyclerAdapter;
+import com.zxm.android_painter.ui.paint.PaintActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,11 +58,25 @@ public class ExploreFragment extends BaseFragment implements BaseQuickAdapter.On
     private List<ExploreInfo> initExploreData() {
         List<ExploreInfo> list = new ArrayList<>();
         //常规绘制
-        ExploreInfo common = new ExploreInfo("常规绘制", getString(R.string.desc_common), R.drawable.click_head_img_0);
+        ExploreInfo common = new ExploreInfo(
+                "常规绘制",
+                getString(R.string.desc_common),
+                R.drawable.click_head_img_0);
         //裁剪绘制
-        ExploreInfo clip = new ExploreInfo("范围裁切", getString(R.string.desc_clip), R.drawable.click_head_img_1);
+        ExploreInfo clip = new ExploreInfo(
+                "范围裁切",
+                getString(R.string.desc_clip),
+                R.drawable.click_head_img_1);
+
+        //裁剪绘制
+        ExploreInfo paint = new ExploreInfo(
+                "Paint相关",
+                getString(R.string.desc_paint),
+                R.drawable.click_head_img_1);
+
         list.add(common);
         list.add(clip);
+        list.add(paint);
         return list;
     }
 
@@ -75,6 +90,10 @@ public class ExploreFragment extends BaseFragment implements BaseQuickAdapter.On
             case 1:
                 Intent clip = new Intent(mContext, ClipActivity.class);
                 startActivity(clip);
+                break;
+            case 2:
+                Intent paint = new Intent(mContext, PaintActivity.class);
+                startActivity(paint);
                 break;
         }
     }

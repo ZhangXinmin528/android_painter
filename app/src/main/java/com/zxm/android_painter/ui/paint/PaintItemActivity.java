@@ -18,7 +18,7 @@ import java.io.Serializable;
  * Copyright (c) 2018 . All rights reserved.
  * Paint单项属性解析
  */
-public class PainItemActivity extends BaseActivity {
+public class PaintItemActivity extends BaseActivity {
 
     public static final String PARAMS_PAINT_INFO = "paint_info";
     private PaintInfo mPaintInfo;
@@ -44,7 +44,7 @@ public class PainItemActivity extends BaseActivity {
 
     @Override
     protected void initViews() {
-        Toolbar toolbar = findViewById(R.id.toolbar_normal_item);
+        Toolbar toolbar = findViewById(R.id.toolbar_paint_item);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -53,6 +53,9 @@ public class PainItemActivity extends BaseActivity {
         }
 
         mPaintView = findViewById(R.id.paintview);
+        if (mPaintInfo!=null){
+            mPaintView.setDrawType(mPaintInfo.getType());
+        }
     }
 
     @Override

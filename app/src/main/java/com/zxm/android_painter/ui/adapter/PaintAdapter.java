@@ -29,7 +29,7 @@ public class PaintAdapter extends BaseQuickAdapter<PaintInfo, BaseViewHolder> {
     protected void convert(BaseViewHolder helper, PaintInfo item) {
         helper.setText(R.id.tv_paint_title, item.getTitle())
                 .setText(R.id.tv_paint_method, mContext.getString(R.string.normal_method, item.getMethod()))
-                .setText(R.id.tv_paint_method, mContext.getString(R.string.normal_method_desc, item.getDesc()));
+                .setText(R.id.tv_paint_desc, mContext.getString(R.string.normal_method_desc, item.getDesc()));
 
     }
 }

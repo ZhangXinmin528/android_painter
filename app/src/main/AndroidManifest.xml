@@ -65,7 +65,7 @@
 
         <!--PaintItem-->
         <activity
-            android:name=".ui.paint.PainItemActivity"
+            android:name=".ui.paint.PaintItemActivity"
             android:screenOrientation="portrait" />
 
         <!--裁剪-->
