@@ -82,19 +82,38 @@ public class PaintActivity extends BaseActivity implements BaseQuickAdapter.OnIt
                 "setARGB",
                 "setARGB"));
         mDataList.add(new PaintInfo(
-                "线性渐变",
+                "LinearGradient",
                 "Create a shader that draws a linear gradient along a line.",
-                "setLinearGradientShader",
+                "mPaint.setShader(shader)",
                 "LinearGradient"));
+
+        mDataList.add(new PaintInfo(
+                "RadialGradient",
+                "Create a shader that draws a radial gradient given the center and radius.",
+                "mPaint.setShader(shader)",
+                "RadialGradient"));
+
+        mDataList.add(new PaintInfo(
+                "SweepGradient",
+                "A Shader that draws a sweep gradient around a center point.",
+                "mPaint.setShader(shader)",
+                "SweepGradient"));
+
+        mDataList.add(new PaintInfo(
+                "BitmapShader",
+                "Shader used to draw a bitmap as a texture. The bitmap can be repeated or" +
+                        " mirrored by setting the tiling mode.",
+                "mPaint.setShader(shader)",
+                "BitmapShader"));
     }
 
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
         PaintInfo info = (PaintInfo) adapter.getItem(position);
         if (info != null) {
-            Intent intent = new Intent(mContext,PaintItemActivity.class);
+            Intent intent = new Intent(mContext, PaintItemActivity.class);
             Bundle bundle = new Bundle();
-            bundle.putSerializable(PARAMS_PAINT_INFO,info);
+            bundle.putSerializable(PARAMS_PAINT_INFO, info);
             intent.putExtras(bundle);
             startActivity(intent);
         }

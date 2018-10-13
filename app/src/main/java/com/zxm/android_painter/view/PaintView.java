@@ -1,18 +1,23 @@
 package com.zxm.android_painter.view;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
+import android.graphics.RadialGradient;
 import android.graphics.Shader;
+import android.graphics.SweepGradient;
 import android.support.annotation.Nullable;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
 
-import java.lang.invoke.MutableCallSite;
+import com.zxm.android_painter.R;
 
 /**
  * Created by ZhangXinmin on 2018/10/10.
@@ -48,6 +53,9 @@ public class PaintView extends View {
 
         mTextPaint = new TextPaint(Paint.ANTI_ALIAS_FLAG);
         mTextPaint.setStyle(Paint.Style.STROKE);
+        mTextPaint.setStrokeWidth(2);
+        mTextPaint.setTextSize(16);
+        mTextPaint.setColor(Color.BLACK);
 
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setStyle(Paint.Style.FILL);
@@ -59,23 +67,97 @@ public class PaintView extends View {
         if (TextUtils.isEmpty(mDrawType))
             return;
 
-        switch (mDrawType){
+        switch (mDrawType) {
             case "setColor":
                 setColor(canvas);
                 break;
             case "setARGB":
                 setARGB(canvas);
                 break;
+            //线性渐变
             case "LinearGradient":
                 setLinearGradientShader(canvas);
+                break;
+            //辐射渐变
+            case "RadialGradient":
+                setRadialGradientShader(canvas);
+                break;
+            //扫描渐变
+            case "SweepGradient":
+                setSweepGradientShader(canvas);
+                break;
+            //图片着色器
+            case "BitmapShader":
+                setBitmapShader(canvas);
+                break;
+            //组合着色器
+            case "ComposeShader":
+                setComposeShader(canvas);
                 break;
         }
     }
 
     /**
-     *Set or clear the shader object.
+     * Set or clear the shader object,while the shader is BitmapShader.
+     * @param canvas
+     */
+    private void setComposeShader(Canvas canvas) {
+
+    }
+
+    /**
+     * Set or clear the shader object,while the shader is BitmapShader.
+     * 和{@link Canvas}的canvas.drawBitmap()实现效果一致，是不是用这个方法可是轻松实现自定义头像的操作
+     *
+     * @param canvas
+     */
+    private void setBitmapShader(Canvas canvas) {
+        mPaint.reset();
+        mPaint.setStyle(Paint.Style.FILL);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.head_portrait);
+        Shader shader = new BitmapShader(bitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
+        mPaint.setShader(shader);
+
+        canvas.drawCircle(400, 350, 250, mPaint);
+    }
+
+    /**
+     * Set or clear the shader object,while the shader is SweepGradient.
+     *
+     * @param canvas
+     */
+    private void setSweepGradientShader(Canvas canvas) {
+        mPaint.reset();
+        mPaint.setStyle(Paint.Style.FILL);
+        Shader shader = new SweepGradient(300, 300, Color.parseColor("#E91E63"),
+                Color.parseColor("#2196F3"));
+        mPaint.setShader(shader);
+        canvas.drawCircle(300, 300, 200, mPaint);
+    }
+
+    /**
+     * Set or clear the shader object,while the shader is RadialGradient.
+     *
+     * @param canvas
+     */
+    private void setRadialGradientShader(Canvas canvas) {
+        mPaint.reset();
+        mPaint.setStyle(Paint.Style.FILL);
+        Shader shader = new RadialGradient(
+                400, 400, 100,
+                Color.parseColor("#E91E63"),
+                Color.parseColor("#2196F3"), Shader.TileMode.REPEAT);
+        mPaint.setShader(shader);
+        //绘制圆
+        canvas.drawCircle(400, 400, 400, mPaint);
+    }
+
+
+    /**
+     * Set or clear the shader object,while the shader is LinearGradient.
      * 1.注意渐变限定区域；
      * 2.注意渐变着色规则{@link android.graphics.Shader.TileMode}
+     *
      * @param canvas
      */
     private void setLinearGradientShader(Canvas canvas) {
@@ -89,31 +171,33 @@ public class PaintView extends View {
         mPaint.setShader(shader);
 
         //绘制矩形
-        canvas.drawRect(100, 100, 600, 600,mPaint);
+        canvas.drawRect(100, 100, 600, 600, mPaint);
 
         mPaint.reset();
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeWidth(2);
         mPaint.setColor(Color.BLUE);
         //绘制矩形
-        canvas.drawRect(100, 100, 200, 200,mPaint);
+        canvas.drawRect(100, 100, 200, 200, mPaint);
     }
 
     /**
      * Helper to setColor(), that takes a,r,g,b and constructs the color int
+     *
      * @param canvas
      */
     private void setARGB(Canvas canvas) {
         mPaint.reset();
         mPaint.setStyle(Paint.Style.FILL);
-        mPaint.setARGB(100,255,0,0);
+        mPaint.setARGB(100, 255, 0, 0);
 
         //绘制矩形
-        canvas.drawRect(30,30,230,200,mPaint);
+        canvas.drawRect(30, 30, 230, 200, mPaint);
     }
 
     /**
      * Set the paint's color.
+     *
      * @param canvas
      */
     private void setColor(Canvas canvas) {
@@ -121,11 +205,12 @@ public class PaintView extends View {
         mPaint.setStyle(Paint.Style.FILL);
         mPaint.setColor(Color.parseColor("#009688"));
         //绘制矩形
-        canvas.drawRect(30,30,230,200,mPaint);
+        canvas.drawRect(30, 30, 230, 200, mPaint);
     }
 
     /**
      * 设置绘制类型
+     *
      * @param drawType
      */
     public void setDrawType(String drawType) {

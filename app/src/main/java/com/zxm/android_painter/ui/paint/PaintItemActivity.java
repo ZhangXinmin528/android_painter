@@ -11,8 +11,6 @@ import com.zxm.android_painter.model.PaintInfo;
 import com.zxm.android_painter.ui.base.BaseActivity;
 import com.zxm.android_painter.view.PaintView;
 
-import java.io.Serializable;
-
 /**
  * Created by ZhangXinmin on 2018/10/10.
  * Copyright (c) 2018 . All rights reserved.
@@ -53,7 +51,7 @@ public class PaintItemActivity extends BaseActivity {
         }
 
         mPaintView = findViewById(R.id.paintview);
-        if (mPaintInfo!=null){
+        if (mPaintInfo != null) {
             mPaintView.setDrawType(mPaintInfo.getType());
         }
     }
