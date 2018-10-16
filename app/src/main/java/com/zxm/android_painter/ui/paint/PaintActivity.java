@@ -105,6 +105,25 @@ public class PaintActivity extends BaseActivity implements BaseQuickAdapter.OnIt
                         " mirrored by setting the tiling mode.",
                 "mPaint.setShader(shader)",
                 "BitmapShader"));
+
+        mDataList.add(new PaintInfo(
+                "ComposeShader",
+                "Create a new compose shader, given shaders A, B, and a combining PorterDuff mode.",
+                "mPaint.setShader(shader)",
+                "ComposeShader"));
+
+        mDataList.add(new PaintInfo(
+                "LightingColorFilter",
+                "A color filter that can be used to simulate simple lighting effects.",
+                "mPaint.setColorFilter(colorFilter)",
+                "LightingColorFilter"));
+
+        mDataList.add(new PaintInfo(
+                "PorterDuffColorFilter",
+                "A color filter that can be used to tint the source pixels using a single color" +
+                        " and a specific {@link PorterDuff Porter-Duff composite mode}.",
+                "mPaint.setColorFilter(colorFilter)",
+                "PorterDuffColorFilter"));
     }
 
     @Override

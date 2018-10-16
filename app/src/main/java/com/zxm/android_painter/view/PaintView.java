@@ -6,8 +6,13 @@ import android.graphics.BitmapFactory;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.ComposeShader;
+import android.graphics.LightingColorFilter;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.RadialGradient;
 import android.graphics.Shader;
 import android.graphics.SweepGradient;
@@ -31,7 +36,6 @@ public class PaintView extends View {
 
     private Paint mTextPaint;
     private Paint mPaint;
-
 
     public PaintView(Context context) {
         this(context, null, 0);
@@ -94,15 +98,82 @@ public class PaintView extends View {
             case "ComposeShader":
                 setComposeShader(canvas);
                 break;
+            //LightingColorFilter
+            case "LightingColorFilter":
+                setLightingColorFilter(canvas);
+                break;
+            //PorterDuffColorFilter
+            case "PorterDuffColorFilter":
+                setPorterDuffColorFilter(canvas);
+                break;
+            //ColorMatrixColorFilter
+            case "ColorMatrixColorFilter":
+                setColorMatrixColorFilter(canvas);
+                break;
         }
     }
 
+    private void setColorMatrixColorFilter(Canvas canvas) {
+    }
+
     /**
-     * Set or clear the shader object,while the shader is BitmapShader.
+     * Set or clear the paint's colorfilter{@link PorterDuffColorFilter}, returning the parameter.
+     *
+     * @param canvas
+     */
+    private void setPorterDuffColorFilter(Canvas canvas) {
+        PorterDuffColorFilter colorFilter = new PorterDuffColorFilter(Color.RED, PorterDuff.Mode.SCREEN);
+        mPaint.reset();
+        mPaint.setColorFilter(colorFilter);
+        Bitmap girl = BitmapFactory.decodeResource(getResources(), R.drawable.head_portrait);
+        canvas.drawBitmap(girl, 50, 50, mPaint);
+    }
+
+    /**
+     * Set or clear the paint's colorfilter{@link LightingColorFilter}, returning the parameter.
+     *
+     * @param canvas
+     */
+    private void setLightingColorFilter(Canvas canvas) {
+        LightingColorFilter colorFilter = new LightingColorFilter(Color.CYAN, Color.BLUE);
+        mPaint.reset();
+        mPaint.setColorFilter(colorFilter);
+        Bitmap girl = BitmapFactory.decodeResource(getResources(), R.drawable.head_portrait);
+        canvas.drawBitmap(girl, 50, 50, mPaint);
+    }
+
+    /**
+     * Set or clear the shader object,while the shader is ComposeShader.
+     * 是不是有点滤镜的效果
+     *
      * @param canvas
      */
     private void setComposeShader(Canvas canvas) {
+        //girl
+        Bitmap girl = BitmapFactory.decodeResource(getResources(), R.drawable.head_portrait);
+        Shader girlShader = new BitmapShader(girl, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
 
+        //heart
+        Shader shader = new LinearGradient(
+                50, 50, 650, 650,
+                Color.parseColor("#FF0000"),
+                Color.parseColor("#00FFFF"),
+                Shader.TileMode.CLAMP);
+
+        Shader composeShader = new ComposeShader(girlShader, shader, PorterDuff.Mode.LIGHTEN);
+        mPaint.reset();
+        mPaint.setStyle(Paint.Style.FILL);
+        mPaint.setShader(composeShader);
+
+        canvas.drawRect(50, 50, 850, 850, mPaint);
+
+        //重叠部分
+        mPaint.reset();
+        mPaint.setStyle(Paint.Style.STROKE);
+        mPaint.setColor(Color.RED);
+        mPaint.setStrokeWidth(2);
+
+        canvas.drawRect(50, 50, 650, 650, mPaint);
     }
 
     /**
