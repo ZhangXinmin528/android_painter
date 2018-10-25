@@ -243,11 +243,15 @@ public class NormalView extends View {
         canvas.translate(0, mTextHeight);
         canvas.drawText("Paint默认样式：" + paint.getStyle(), x, y, mTextPaint);
         canvas.translate(0, mTextHeight);
-        canvas.drawText("Paint默认CAP：" + paint.getStrokeCap(), x, y, mTextPaint);
-        canvas.translate(0, mTextHeight);
         canvas.drawText("Paint默认颜色：" + paint.getColor(), x, y, mTextPaint);
         canvas.translate(0, mTextHeight);
         canvas.drawText("Paint默认线宽：" + paint.getStrokeWidth(), x, y, mTextPaint);
+        canvas.translate(0, mTextHeight);
+        canvas.drawText("Paint默认Cap：" + paint.getStrokeCap(), x, y, mTextPaint);
+        canvas.translate(0, mTextHeight);
+        canvas.drawText("Paint默认Join：" + paint.getStrokeJoin(), x, y, mTextPaint);
+        canvas.translate(0, mTextHeight);
+        canvas.drawText("Paint默认stroke miter value：" + paint.getStrokeMiter(), x, y, mTextPaint);
         canvas.translate(0, mTextHeight);
         canvas.drawText("更多内容查阅PaintActivity!", x, y, mTextPaint);
     }

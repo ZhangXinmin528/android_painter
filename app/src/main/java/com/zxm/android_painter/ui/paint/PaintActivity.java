@@ -124,6 +124,127 @@ public class PaintActivity extends BaseActivity implements BaseQuickAdapter.OnIt
                         " and a specific {@link PorterDuff Porter-Duff composite mode}.",
                 "mPaint.setColorFilter(colorFilter)",
                 "PorterDuffColorFilter"));
+
+        mDataList.add(new PaintInfo(
+                "ColorMatrixColorFilter",
+                "A color filter that transforms colors through a 4x5 color matrix.",
+                "mPaint.setColorFilter(colorFilter)",
+                "ColorMatrixColorFilter"));
+
+        mDataList.add(new PaintInfo(
+                "PorterDuffXfermode",
+                "Specialized implementation of {@link Paint}'s" +
+                        " {@link Paint#setXfermode(Xfermode) transfer mode}.",
+                "mPaint.setXfermode(xfermode);",
+                "PorterDuffXfermode"));
+
+        mDataList.add(new PaintInfo(
+                "setAntiAlias",
+                "Helper for setFlags(), setting or clearing the ANTI_ALIAS_FLAG bit" +
+                        " AntiAliasing smooths out the edges of what is being drawn, but is has" +
+                        " no impact on the interior of the shape. ",
+                "mPaint.setAntiAlias(aa);",
+                "setAntiAlias"));
+
+        mDataList.add(new PaintInfo(
+                "setStyle",
+                "Set the paint's style, used for controlling how primitives'" +
+                        " geometries are interpreted (except for drawBitmap, which always assumes" +
+                        " Fill).",
+                "mPaint.setStyle();",
+                "setStyle"));
+
+        mDataList.add(new PaintInfo(
+                "setStrokeWidth",
+                "Set the width for stroking.",
+                "mPaint.setStrokeWidth();",
+                "setStrokeWidth"));
+
+        mDataList.add(new PaintInfo(
+                "setStrokeCap",
+                "Set the paint's Cap.The default is BUTT.",
+                "mPaint.setStrokeWidth();",
+                "setStrokeCap"));
+
+        mDataList.add(new PaintInfo(
+                "setStrokeJoin",
+                "Set the paint's Join.The default is MITER.",
+                "mPaint.setStrokeJoin();",
+                "setStrokeJoin"));
+
+        mDataList.add(new PaintInfo(
+                "setStrokeMiter",
+                "Set the paint's stroke miter value.",
+                "mPaint.setStrokeMiter();",
+                "setStrokeMiter"));
+
+        mDataList.add(new PaintInfo(
+                "CornerPathEffect",
+                "Set or clear the patheffect{@link CornerPathEffect} object.",
+                "mPaint.setPathEffect();",
+                "CornerPathEffect"));
+
+        mDataList.add(new PaintInfo(
+                "DiscretePathEffect",
+                "Set or clear the patheffect{@link DiscretePathEffect} object.",
+                "mPaint.setPathEffect();",
+                "DiscretePathEffect"));
+
+        mDataList.add(new PaintInfo(
+                "DashPathEffect",
+                "Set or clear the patheffect{@link DashPathEffect} object.",
+                "mPaint.setPathEffect();",
+                "DashPathEffect"));
+
+        mDataList.add(new PaintInfo(
+                "PathDashPathEffect",
+                "Set or clear the patheffect{@link PathDashPathEffect} object.",
+                "mPaint.setPathEffect();",
+                "PathDashPathEffect"));
+
+        mDataList.add(new PaintInfo(
+                "SumPathEffect",
+                "Set or clear the patheffect{@link android.graphics.SumPathEffect} object.",
+                "mPaint.setPathEffect();",
+                "SumPathEffect"));
+
+        mDataList.add(new PaintInfo(
+                "ComposePathEffect",
+                "Set or clear the patheffect{@link ComposePathEffect} object.",
+                "mPaint.setPathEffect();",
+                "ComposePathEffect"));
+
+        mDataList.add(new PaintInfo(
+                "setShadowLayer",
+                "This draws a shadow layer below the main layer, with the specified" +
+                        " offset and color, and blur radius.",
+                "mPaint.setShadowLayer();",
+                "setShadowLayer"));
+
+        mDataList.add(new PaintInfo(
+                "BlurMaskFilter",
+                "Set or clear the maskfilter{@link BlurMaskFilter} object.",
+                "mPaint.setMaskFilter();",
+                "BlurMaskFilter"));
+
+        mDataList.add(new PaintInfo(
+                "EmbossMaskFilter",
+                "Set or clear the maskfilter{@link EmbossMaskFilter} object.",
+                "mPaint.setMaskFilter();",
+                "EmbossMaskFilter"));
+
+        mDataList.add(new PaintInfo(
+                "getFillPath",
+                "Applies any/all effects (patheffect, stroking) to src, returning the" +
+                        "  result in dst.",
+                "mPaint.getFillPath();",
+                "getFillPath"));
+
+        mDataList.add(new PaintInfo(
+                "getTextPath",
+                "Return the path (outline) for the specified text.",
+                "mPaint.getTextPath();",
+                "getTextPath"));
     }
 
     @Override

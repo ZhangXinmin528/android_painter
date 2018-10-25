@@ -15,9 +15,16 @@
         android:theme="@style/AppTheme.AppBarOverlay.ToolBar"
         app:navigationIcon="?android:attr/homeAsUpIndicator" />
 
-    <com.zxm.android_painter.view.PaintView
-        android:id="@+id/paintview"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <com.zxm.android_painter.view.PaintView
+            android:id="@+id/paintview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </ScrollView>
+
 
 </LinearLayout>
