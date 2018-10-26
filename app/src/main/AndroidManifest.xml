@@ -30,7 +30,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".ui.SplashActivity"
             android:screenOrientation="portrait">
@@ -66,6 +67,15 @@
         <!--PaintItem-->
         <activity
             android:name=".ui.paint.PaintItemActivity"
+            android:screenOrientation="portrait" />
+
+        <!--文字绘制-->
+        <activity
+            android:name=".ui.text.TextActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.text.TextItemActivity"
             android:screenOrientation="portrait" />
 
         <!--裁剪-->

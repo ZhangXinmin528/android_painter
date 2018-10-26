@@ -5,7 +5,6 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.view.MenuItem;
-import android.webkit.WebViewFragment;
 
 import com.zxm.android_painter.R;
 import com.zxm.android_painter.ui.base.BaseActivity;
@@ -104,10 +103,13 @@ public class HomeActivity extends BaseActivity implements
             return;
 
         if (fragment.isAdded()) {
-            mFragmentManager.beginTransaction()
-                    .show(fragment)
-                    .hide(mCurrFragment)
-                    .commit();
+            if (!fragment.isVisible()) {
+                mFragmentManager.beginTransaction()
+                        .show(fragment)
+                        .hide(mCurrFragment)
+                        .commit();
+            }
+
         } else {
             mFragmentManager.beginTransaction()
                     .add(R.id.container, fragment, tag.name())

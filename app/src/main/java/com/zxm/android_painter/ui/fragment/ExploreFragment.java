@@ -9,9 +9,10 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.zxm.android_painter.R;
 import com.zxm.android_painter.model.ExploreInfo;
 import com.zxm.android_painter.ui.ClipActivity;
-import com.zxm.android_painter.ui.normal.NormalDrawActivity;
 import com.zxm.android_painter.ui.adapter.ExploreRecyclerAdapter;
+import com.zxm.android_painter.ui.normal.NormalDrawActivity;
 import com.zxm.android_painter.ui.paint.PaintActivity;
+import com.zxm.android_painter.ui.text.TextActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,15 +69,22 @@ public class ExploreFragment extends BaseFragment implements BaseQuickAdapter.On
                 getString(R.string.desc_clip),
                 R.drawable.click_head_img_1);
 
-        //裁剪绘制
+        //Paint相关
         ExploreInfo paint = new ExploreInfo(
                 "Paint相关",
                 getString(R.string.desc_paint),
+                R.drawable.click_head_img_0);
+
+        //文字绘制相关
+        ExploreInfo text = new ExploreInfo(
+                "文字绘制",
+                getString(R.string.desc_text),
                 R.drawable.click_head_img_1);
 
         list.add(common);
         list.add(clip);
         list.add(paint);
+        list.add(text);
         return list;
     }
 
@@ -94,6 +102,10 @@ public class ExploreFragment extends BaseFragment implements BaseQuickAdapter.On
             case 2:
                 Intent paint = new Intent(mContext, PaintActivity.class);
                 startActivity(paint);
+                break;
+            case 3:
+                Intent text = new Intent(mContext, TextActivity.class);
+                startActivity(text);
                 break;
         }
     }

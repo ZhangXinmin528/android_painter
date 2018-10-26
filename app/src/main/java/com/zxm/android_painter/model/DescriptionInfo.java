@@ -1,6 +1,5 @@
 package com.zxm.android_painter.model;
 
-import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 
 import java.io.Serializable;
@@ -8,19 +7,18 @@ import java.io.Serializable;
 /**
  * Created by ZhangXinmin on 2018/10/10.
  * Copyright (c) 2018 . All rights reserved.
- * Entity for PaintActivity.
  */
-public final class PaintInfo implements Serializable {
+public final class DescriptionInfo implements Serializable {
     private String title;
     private String desc;
     private String method;
     private String type;
 
-    public PaintInfo() {
+    public DescriptionInfo() {
     }
 
-    public PaintInfo(@NonNull String title, @NonNull String desc,
-                     @NonNull String method,@NonNull String type) {
+    public DescriptionInfo(@NonNull String title, @NonNull String desc,
+                           @NonNull String method, @NonNull String type) {
         this.title = title;
         this.desc = desc;
         this.method = method;
@@ -61,7 +59,7 @@ public final class PaintInfo implements Serializable {
 
     @Override
     public String toString() {
-        return "PaintInfo{" +
+        return "DescriptionInfo{" +
                 "title='" + title + '\'' +
                 ", desc='" + desc + '\'' +
                 ", method='" + method + '\'' +

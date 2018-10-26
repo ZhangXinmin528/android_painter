@@ -16,21 +16,13 @@
     <string name="nav_item_reading">阅读</string>
     <string name="nav_item_setting">设置</string>
     <string name="nav_item_about">关于</string>
-    <string name="nav_item_location">My Location</string>
-    <string name="drawer_header_text">Drawer Header</string>
-
-
-    <!--menu-->
-    <string name="menu_search">Search</string>
-    <string name="menu_canvas">Show Canvas</string>
-    <string name="menu_Paint">Show Paint</string>
-    <string name="menu_Path">Show Path</string>
 
     <!--canvas-->
     <string name="canvas_draw">常规绘制</string>
     <string name="canvas_paint">Paint详解</string>
     <string name="canvas_clip">范围裁切</string>
     <string name="canvas_matrix">矩阵变换</string>
+    <string name="canvas_text">文字绘制</string>
 
     <!--clip-->
     <string name="clip_path">clipPath</string>
@@ -40,6 +32,7 @@
     <string name="desc_common">常规绘制：将会介绍Canvas里的常用绘制方法。如绘制颜色，绘制常规的几何图形等。</string>
     <string name="desc_clip">范围裁切：将会介绍Canvas里的常用绘制方法。如绘制颜色，绘制常规的几何图形等。</string>
     <string name="desc_paint">Paint相关：将会介绍自定义View中Paint相关API。</string>
+    <string name="desc_text">文字绘制：将会介绍自定义View中文字绘制相关API。</string>
 
     <string name="normal_method">方法名：%1$s</string>
     <string name="normal_method_desc">作用：%1$s</string>
