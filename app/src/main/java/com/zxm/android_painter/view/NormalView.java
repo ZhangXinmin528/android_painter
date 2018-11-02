@@ -253,6 +253,10 @@ public class NormalView extends View {
         canvas.translate(0, mTextHeight);
         canvas.drawText("Paint默认stroke miter value：" + paint.getStrokeMiter(), x, y, mTextPaint);
         canvas.translate(0, mTextHeight);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            canvas.drawText("Paint默认字符间距：" + paint.getLetterSpacing(), x, y, mTextPaint);
+            canvas.translate(0, mTextHeight);
+        }
         canvas.drawText("更多内容查阅PaintActivity!", x, y, mTextPaint);
     }
 

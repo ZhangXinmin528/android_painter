@@ -5,6 +5,7 @@ import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.os.Build;
 import android.support.annotation.Nullable;
 import android.text.Layout;
@@ -16,6 +17,8 @@ import android.view.View;
 
 import com.zxm.android_painter.R;
 import com.zxm.libcommon.Logger;
+
+import java.util.Locale;
 
 /**
  * Created by ZhangXinmin on 2018/10/25.
@@ -110,6 +113,7 @@ public class TextDescView extends View {
         }
     }
 
+
     /**
      * 设置多种文本样式
      *
@@ -117,7 +121,7 @@ public class TextDescView extends View {
      */
     private void setMultiStyle(Canvas canvas) {
 
-        final String content = "Android 自定义View";
+        final String content = "Android自定义View";
         drawTitleText("原文本", canvas);
         //绘制原文本
         mPaint.reset();
@@ -206,7 +210,7 @@ public class TextDescView extends View {
             mPaint.setColor(Color.BLUE);
             mPaint.setStyle(Paint.Style.FILL);
             mPaint.setStrokeWidth(2);
-            mPaint.setLetterSpacing(1.2f);
+            mPaint.setLetterSpacing(0.2f);
             mPaint.setTextSize(mResources.getDimensionPixelSize(R.dimen.textsize_25sp));
 
             canvas.drawText(
@@ -214,8 +218,47 @@ public class TextDescView extends View {
                     width,
                     textHeight,
                     mPaint);
+
+            canvas.translate(0, textHeight + mVerticalSpaceing);
         }
 
+        //简体中文
+        final String lanContent = "中华台北";
+        drawTitleText("简体中文:" + Locale.CHINA, canvas);
+        mPaint.reset();
+        mPaint.setColor(Color.BLUE);
+        mPaint.setStyle(Paint.Style.FILL);
+        mPaint.setStrokeWidth(2);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            mPaint.setLetterSpacing(0.0f);
+        }
+        mPaint.setTextLocale(Locale.CHINA);
+        mPaint.setTextSize(mResources.getDimensionPixelSize(R.dimen.textsize_25sp));
+
+        canvas.drawText(
+                lanContent,
+                (mViewWidth - mPaint.measureText(lanContent)) / 2,
+                textHeight,
+                mPaint);
+
+        canvas.translate(0, textHeight + mVerticalSpaceing);
+
+        //中文繁体
+        drawTitleText("中文繁体:" + Locale.TAIWAN, canvas);
+        mPaint.reset();
+        mPaint.setColor(Color.BLUE);
+        mPaint.setStyle(Paint.Style.FILL);
+        mPaint.setStrokeWidth(2);
+        mPaint.setTextLocale(Locale.TAIWAN);
+        mPaint.setTextSize(mResources.getDimensionPixelSize(R.dimen.textsize_25sp));
+
+        canvas.drawText(
+                lanContent,
+                (mViewWidth - mPaint.measureText(lanContent)) / 2,
+                textHeight,
+                mPaint);
+
+        canvas.translate(0, textHeight + mVerticalSpaceing);
 
 
     }
@@ -260,12 +303,13 @@ public class TextDescView extends View {
 
         //绘制文本
         final String content = "文字绘制:AaJjPp";
-
+        final Rect bound = new Rect();
         mTextPaint.reset();
         mTextPaint.setStrokeWidth(2);
         mTextPaint.setColor(Color.parseColor("#444444"));
         mTextPaint.setTextSize(mResources.getDimensionPixelSize(R.dimen.textsize_30sp));
         mTextPaint.setStyle(Paint.Style.FILL);
+        mTextPaint.getTextBounds(content, 0, content.length(), bound);
 
         //获取属性值
         // 获取绘制文本高度：（基线位置）
@@ -283,6 +327,17 @@ public class TextDescView extends View {
 
         canvas.drawText(content, x, textHeight, mTextPaint);
 
+        bound.left += x;
+        bound.top += textHeight;
+        bound.right += x;
+        bound.bottom += textHeight;
+
+        //绘制边框
+        mPaint.reset();
+        mPaint.setColor(Color.LTGRAY);
+        mPaint.setStrokeWidth(1);
+        mPaint.setStyle(Paint.Style.STROKE);
+        canvas.drawRect(bound, mPaint);
 
         //注意：位置都是相对于基线的距离
         //-------绘制基线（baseline）--------//
@@ -384,6 +439,13 @@ public class TextDescView extends View {
         canvas.translate(0, bottom + textHeight);
         canvas.drawText(baseDot, (mViewWidth - textWidth) / 2, mTextHeight, mTextPaint);
 
+        //文字高度
+//        canvas.translate(0, textHeight);
+        final String heightContent = "使用getTextBounds方法获取文字高度更为准确";
+
+        canvas.drawText(heightContent,
+                (mViewWidth - mTextPaint.measureText(heightContent)) / 2,
+                mTextHeight, mTextPaint);
     }
 
     /**
