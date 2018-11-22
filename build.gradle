@@ -26,13 +26,13 @@ task clean(type: Delete) {
 // Define versions in a single place
 ext {
     // Sdk and tools
-    compileSdkVersion = 27
+    compileSdkVersion = 28
     buildToolsVersion = '28.0.3'
     minSdkVersion = 19
     targetSdkVersion = 25
 
     // App dependencies
-    supportLibraryVersion = '27.1.1'
+    supportLibraryVersion = '28.0.0'
     constraintLayoutVersion = '1.1.2'
 
     smartrefreshVersion = '1.0.5.1'
