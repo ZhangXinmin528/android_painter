@@ -12,7 +12,6 @@ import com.zxm.android_painter.ui.fragment.ExploreFragment;
 import com.zxm.android_painter.ui.fragment.HomeFragment;
 import com.zxm.android_painter.ui.fragment.MoreFragment;
 import com.zxm.android_painter.ui.fragment.QuotationsFragment;
-import com.zxm.android_painter.util.BottomNavigationViewHelper;
 import com.zxm.android_painter.util.FragmentTag;
 import com.zxm.android_painter.util.StatusBarCompat;
 
@@ -44,8 +43,6 @@ public class HomeActivity extends BaseActivity implements
         StatusBarCompat.setColor(this, getResources().getColor(R.color.color_status_bar));
 
         mBottomNavigationView = findViewById(R.id.navigation_bottom_home);
-        //禁用动画
-        BottomNavigationViewHelper.disableShiftMode(mBottomNavigationView);
         //切换底部导航栏
         mBottomNavigationView.setOnNavigationItemSelectedListener(this);
         //显示首页
