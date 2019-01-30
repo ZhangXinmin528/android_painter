@@ -3,7 +3,6 @@ package com.zxm.android_painter.ui;
 import android.content.Intent;
 import android.os.CountDownTimer;
 import android.view.View;
-import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.zxm.android_painter.R;
@@ -52,8 +51,9 @@ public class SplashActivity extends BaseActivity implements View.OnClickListener
     protected void onStart() {
         super.onStart();
         mTimer.start();
-        mLottieAnimationView.setAnimation("peli-canon.json");
+        mLottieAnimationView.setAnimation("splash.json");
         mLottieAnimationView.setRepeatCount(INFINITE);
+        mLottieAnimationView.setImageAssetsFolder("airbnb_slpash/");
         mLottieAnimationView.playAnimation();
     }
 
