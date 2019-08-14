@@ -9,7 +9,7 @@ import android.view.View;
 import com.zxm.android_painter.R;
 import com.zxm.android_painter.model.TabInfo;
 import com.zxm.android_painter.ui.adapter.NewsTabAdapter;
-import com.zxm.libcommon.Logger;
+import com.zxm.android_painter.ui.base.BaseFragment;
 
 import java.util.ArrayList;
 import java.util.List;

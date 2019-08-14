@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.zxm.android_painter.R;
+import com.zxm.android_painter.ui.base.BaseFragment;
 
 
 /**

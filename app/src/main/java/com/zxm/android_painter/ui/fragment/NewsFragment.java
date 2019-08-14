@@ -18,6 +18,7 @@ import com.zxm.android_painter.api.HttpApi;
 import com.zxm.android_painter.model.NewsInfo;
 import com.zxm.android_painter.model.TabInfo;
 import com.zxm.android_painter.ui.adapter.NewsRecyclerAdapter;
+import com.zxm.android_painter.ui.base.BaseFragment;
 import com.zxm.android_painter.ui.web.WebActivity;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;

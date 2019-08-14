@@ -4,11 +4,14 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
+
+import java.util.ArrayDeque;
 
 /**
  * Created by ZhangXinmin on 2017/9/17.
@@ -21,6 +24,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected Context mContext;
     protected Resources mResources;
+
+    private ArrayDeque<BaseFragment> mFragments = new ArrayDeque<>();
 
     /**
      * set layout for activity
@@ -75,5 +80,16 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     protected void requestDataFromNet() {
 
+    }
+
+    public void popBack(BaseFragment fragment) {
+        if (mFragments.contains(fragment)) {
+            mFragments.remove(fragment);
+            FragmentManager fm = getSupportFragmentManager();
+            fm.popBackStack();
+            if (mFragments.isEmpty()) {
+                finish();
+            }
+        }
     }
 }

@@ -1,7 +1,8 @@
-package com.zxm.android_painter.ui.fragment;
+package com.zxm.android_painter.ui.base;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -15,7 +16,10 @@ import android.view.ViewGroup;
  */
 
 public abstract class BaseFragment extends Fragment {
+
     protected Context mContext;
+
+    protected View mRootView;
 
     @Override
     public void onAttach(Context context) {
@@ -34,18 +38,19 @@ public abstract class BaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        final View rootView;
+
         if (setRootLayout() instanceof Integer) {
-            rootView = inflater.inflate((Integer) setRootLayout(), container, false);
+            mRootView = inflater.inflate((Integer) setRootLayout(), container, false);
         } else if (setRootLayout() instanceof View) {
-            rootView = (View) setRootLayout();
+            mRootView = (View) setRootLayout();
         } else {
             throw new ClassCastException("You must do setRootLayout method!");
         }
-        if (rootView != null)
-            initViews(rootView);
+        if (mRootView != null) {
+            initViews(mRootView);
+        }
 
-        return rootView;
+        return mRootView;
     }
 
     /**
@@ -67,4 +72,14 @@ public abstract class BaseFragment extends Fragment {
      */
     protected abstract void initViews(View rootView);
 
+    final public <T extends View> T findViewById(@IdRes int id) {
+        return mRootView.findViewById(id);
+    }
+
+    public void popBack() {
+        BaseActivity activity = (BaseActivity) getActivity();
+        if (activity != null) {
+            activity.popBack(this);
+        }
+    }
 }

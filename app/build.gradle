@@ -29,8 +29,6 @@ android {
             buildConfigField("boolean", "LOG_ENABLE", "true")
 
         }
-
-
     }
 
     defaultConfig {

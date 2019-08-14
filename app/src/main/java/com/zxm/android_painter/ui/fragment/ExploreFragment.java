@@ -10,6 +10,7 @@ import com.zxm.android_painter.R;
 import com.zxm.android_painter.model.ExploreInfo;
 import com.zxm.android_painter.ui.ClipActivity;
 import com.zxm.android_painter.ui.adapter.ExploreRecyclerAdapter;
+import com.zxm.android_painter.ui.base.BaseFragment;
 import com.zxm.android_painter.ui.normal.NormalDrawActivity;
 import com.zxm.android_painter.ui.paint.PaintActivity;
 import com.zxm.android_painter.ui.text.TextActivity;

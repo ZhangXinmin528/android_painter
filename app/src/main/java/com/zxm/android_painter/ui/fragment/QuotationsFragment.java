@@ -10,6 +10,7 @@ import android.view.View;
 
 import com.zxm.android_painter.R;
 import com.zxm.android_painter.ui.adapter.QuotationTabAdapter;
+import com.zxm.android_painter.ui.base.BaseFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -4,7 +4,7 @@ package com.zxm.android_painter.ui.fragment.quotation;
 import android.view.View;
 
 import com.zxm.android_painter.R;
-import com.zxm.android_painter.ui.fragment.BaseFragment;
+import com.zxm.android_painter.ui.base.BaseFragment;
 
 /**
  * Created by ZhangXinmin on 2018/2/7.
