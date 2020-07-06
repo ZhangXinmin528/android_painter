@@ -13,13 +13,6 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.zxm.android_painter.R;
-import com.zxm.android_painter.api.HttpApi;
-import com.zxm.android_painter.model.NewsInfo;
-import com.zxm.android_painter.model.TabInfo;
-import com.zxm.android_painter.ui.adapter.NewsRecyclerAdapter;
-import com.zxm.android_painter.ui.base.BaseFragment;
-import com.zxm.android_painter.ui.web.WebActivity;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
@@ -28,6 +21,13 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
+import com.zxm.android_painter.R;
+import com.zxm.android_painter.api.HttpApi;
+import com.zxm.android_painter.model.NewsInfo;
+import com.zxm.android_painter.model.TabInfo;
+import com.zxm.android_painter.ui.adapter.NewsRecyclerAdapter;
+import com.zxm.android_painter.ui.base.BaseFragment;
+import com.zxm.android_painter.ui.web.WebActivity;
 import com.zxm.libcommon.Logger;
 
 import java.util.ArrayList;
@@ -44,10 +44,8 @@ import static com.zxm.android_painter.ui.web.WebActivity.PARAMS_URL;
 public class NewsFragment extends BaseFragment implements OnRefreshListener, OnLoadMoreListener
         , BaseQuickAdapter.OnItemClickListener {
 
-    private static final String TAG = NewsFragment.class.getSimpleName();
-
     public static final String PARAMS_ARGS = "args";
-
+    private static final String TAG = NewsFragment.class.getSimpleName();
     private static final int PAGE_SIZE = 10;
     private int mPage = 1;
 

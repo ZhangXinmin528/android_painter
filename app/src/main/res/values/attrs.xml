@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="StepHistoryView">
+        <!--坐标轴文字字号-->
+        <attr name="textsize_axis_text" format="reference|dimension" />
+        <!--坐标轴文字颜色-->
+        <attr name="textcolor_axis_text" format="reference|color" />
+        <!--标签文字字号-->
+        <attr name="textsize_tag_text" format="reference|dimension" />
+        <!--标签文字颜色-->
+        <attr name="textcolor_tag_text" format="reference|color" />
+    </declare-styleable>
+</resources>

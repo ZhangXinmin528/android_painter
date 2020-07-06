@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/android_painter.iml" filepath="$PROJECT_DIR$/android_painter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/libCommon/libCommon.iml" filepath="$PROJECT_DIR$/libCommon/libCommon.iml" />
-      <module fileurl="file://$PROJECT_DIR$/libLocation/libLocation.iml" filepath="$PROJECT_DIR$/libLocation/libLocation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android_painter.iml" filepath="$PROJECT_DIR$/android_painter.iml" group="android_painter" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="android_painter/app" />
+      <module fileurl="file://$PROJECT_DIR$/libCommon/libCommon.iml" filepath="$PROJECT_DIR$/libCommon/libCommon.iml" group="android_painter/libCommon" />
+      <module fileurl="file://$PROJECT_DIR$/libLocation/libLocation.iml" filepath="$PROJECT_DIR$/libLocation/libLocation.iml" group="android_painter/libLocation" />
     </modules>
   </component>
 </project>

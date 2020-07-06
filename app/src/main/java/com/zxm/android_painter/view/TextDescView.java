@@ -440,7 +440,7 @@ public class TextDescView extends View {
         canvas.drawText(baseDot, (mViewWidth - textWidth) / 2, mTextHeight, mTextPaint);
 
         //文字高度
-//        canvas.translate(0, textHeight);
+        canvas.translate(0, textHeight);
         final String heightContent = "使用getTextBounds方法获取文字高度更为准确";
 
         canvas.drawText(heightContent,

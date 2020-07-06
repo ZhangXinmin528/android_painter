@@ -1136,10 +1136,10 @@ public class PaintView extends View {
         drawTitleText("LinearGradient的使用", canvas);
         mPaint.reset();
         Shader shader = new LinearGradient(
-                100, 100, 200, 200,
-                Color.parseColor("#FF0000"),
-                Color.parseColor("#00FFFF"),
-                Shader.TileMode.REPEAT);
+                300, 100, 300, 600,
+                Color.parseColor("#5498FF"),
+                Color.parseColor("#ffffff"),
+                Shader.TileMode.CLAMP);
         mPaint.setShader(shader);
 
         //绘制矩形
